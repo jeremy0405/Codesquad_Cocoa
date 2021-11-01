@@ -9,19 +9,78 @@
 
 ______
 
-##### 조건문, 반복문, 함수의 학습
-- 조건문
-설명 하기 전에 싱크로나이즈부터 어떻게 하는지 알아야 될 거 같음.
+### 조건문, 반복문, 함수의 학습
+- 조건문 (if, switch)
+```java
+if( 조건 ) {
+	//실행할 명령
+	//실행할 명령이 하나라면 { } 생략 가능
+} else if (조건) {
+	//명령
+} else {
+	//명령
+}
+```
 
-- 반복문
+```java
+switch (조건 ) {
+	case 값 1 :
+		// 명령1
+		// 명령2
+		break;
+	case 값 2 :
+		// 명령1
+		// 명령2
+		break;
+	default :
+		// 조건과 일치하는 결과가 없을 때
+		// 명령1
+}
+```
 
-
+- 반복문 (for, while)
+```java
+for(int i = 0; i < 10; i++){
+	//명령
+}
+```
+```java
+//for each 문
+int[] arr = {10, 20, 30, 40}
+for(int tmp : arr){
+	System.out.println(tmp);
+}
+```
+결과 :
+10
+20
+30
+40
+```java
+int i = 1;
+while(i < 10){
+	//명령1
+	i++;
+}
+```
 
 - 함수
+java에서 메소드가 함수의 역할을 한다.
+```java
+반환타입 메서드명 (타입 변수명, 타입 변수명, ...)
+{
+	//메서드 호출 시 실행될 명령
+}
+
+int add(int a, int b)
+{
+	return a + b;
+}
+```
 
 
 ___
-##### Markdown 문법
+### Markdown 문법
 
 ```
 # 제목 1단계
@@ -54,10 +113,10 @@ ___
 ```
 
 >**strong text**
-*emphasized text*
-***strong & emphasized text***
-~~strikethrough text~~
-<u>underline<u>
+>*emphasized text*
+>***strong & emphasized text***
+>~~strikethrough text~~
+><u>underline<u>
 ___
 ```
 1. 첫번째
@@ -88,7 +147,7 @@ ___
 
 >유형1 [Jhrock Blog](https://jeremy0405.github.io "말풍선 설정")
 >유형2 <https://jeremy0405.github.io>
->유형3 [동일파일 내 문단 이동](#markdown-문법)
+>유형3 [동일파일 내 문단 이동(Markdown 문법)](#markdown-문법)
 
 ```
 동일파일 내 문단이동 방법 
@@ -97,6 +156,5 @@ ___
 3) 대문자->`소문자`로 변경  
 예) “#Markdown! 장점” -> “#markdown–장점”
 무조건 # 하나만 써야 됨
-
 ```
 
