@@ -8,6 +8,7 @@ public class num2447 {
     static void draw(int num){
 
         System.out.print(star.repeat(num));
+        System.out.println("");
     }
 
     public static void main(String[] args) {
