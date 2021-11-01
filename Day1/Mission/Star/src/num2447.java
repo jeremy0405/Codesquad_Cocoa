@@ -9,6 +9,7 @@ public class num2447 {
 
         System.out.print(star.repeat(num));
         System.out.println("");
+        // 감이 안잡힌다..
     }
 
     public static void main(String[] args) {
