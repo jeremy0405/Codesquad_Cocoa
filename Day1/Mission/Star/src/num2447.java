@@ -7,18 +7,32 @@ public class num2447 {
 
     static void draw(int num){
 
-        System.out.print(star.repeat(num));
-        System.out.println("");
-        // 감이 안잡힌다..
+        if(num == 3){
+            System.out.println("***");
+            System.out.println("* *");
+            System.out.println("***");
+        } else {
+
+            int temp = num / 3;
+
+            for (int i = temp; i <= num; i *= 3) {
+                for (int j = temp; j <= num; j *= 3) {
+                    if (i == 2 * temp && j == 2 * temp) {
+
+                    } else {
+                        draw(temp);
+                    }
+                }
+            }
+        }
+
     }
+
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int num = sc.nextInt();
 
-        for(int i = 3; i <= num; i *= 3)
-        {
-            draw(i);
-        }
+        draw(num);
     }
 }
