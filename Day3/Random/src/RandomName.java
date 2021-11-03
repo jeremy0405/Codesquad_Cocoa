@@ -18,8 +18,18 @@ public class RandomName {
 
         Random random = new Random();
 
+        int[] idx = new int[num];
+        for(int i = 0; i < num; i++){
+            idx[i] = random.nextInt(11);
+            for(int j = 0; j < i; j++){
+                if(idx[j] == idx[i]){
+                    i--;
+                }
+            }
+        }
+
         for (int i = 0; i < num; i++) {
-            System.out.print(name[random.nextInt(11)]);
+            System.out.print(name[idx[i]]);
             if(i != num - 1){
                 System.out.print(", ");
             }
