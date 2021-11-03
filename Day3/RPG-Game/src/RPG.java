@@ -124,7 +124,32 @@ public class RPG {
 
     }
 
+
+
     public static void main(String[] args) {
+
+        System.out.println("w, a, s, d 입력 후 엔터를 눌러 P 플레이어 이동");
+        System.out.println("지뢰를 밟으면 플레이어의 패배");
+        System.out.println("지뢰를 피해 최대한 많은 몬스터를 잡아보세요!");
+
+        Boolean isWork = true;
+        int score = -100;
+
+        while(isWork){
+
+            score += 100;
+            System.out.println("현재 스코어 : " + score);
+
+            isWork = GameStart();
+
+        }
+
+        System.out.println("최종 스코어 : " + score);
+
+
+    }
+
+    private static Boolean GameStart() {
 
         String[][] map = getMap();
 
@@ -139,7 +164,11 @@ public class RPG {
 
         int[] MineLocation = getMineLocation(MonsterLocation);
 
-        int score = 0;
+        return PlayGame(map, Player, MonsterLocation, MineLocation);
+    }
+
+    private static Boolean PlayGame(String[][] map, int[] Player, int[] MonsterLocation,
+        int[] MineLocation) {
 
         while (true) {
 
@@ -147,26 +176,25 @@ public class RPG {
 
             Player = MovePlayer(map, Player[0], Player[1]);
 
-            System.out.printf("Mine : %d, %d\n", MineLocation[0],
-                MineLocation[1]);        // 테스트용 마인 위치 프린트
-            System.out.printf("Monster : %d, %d\n", MonsterLocation[0],
-                MonsterLocation[1]);  // 테스트용 몬스터 위치 프린트
-            System.out.printf("Player :%d, %d\n", Player[0],
-                Player[1]);                    // 테스트용 플레이어 위치 프린트
+
+//            System.out.printf("Mine : %d, %d\n", MineLocation[0],
+//                MineLocation[1]);        // 테스트용 마인 위치 프린트
+//            System.out.printf("Monster : %d, %d\n", MonsterLocation[0],
+//                MonsterLocation[1]);  // 테스트용 몬스터 위치 프린트
+//            System.out.printf("Player :%d, %d\n", Player[0],
+//                Player[1]);                    // 테스트용 플레이어 위치 프린트
 
             if (Player[0] == MonsterLocation[0] && Player[1] == MonsterLocation[1]) {
                 System.out.println("You catch the monster!!");
-                score += 100;
-                continue;
+                return true;
             }
 
             if (Player[0] == MineLocation[0] && Player[1] == MineLocation[1]) {
                 System.out.println("You stepped on a mine");
                 System.out.println("Game Over!!");
-                break;
+                return false;
             }
         }
-
     }
 
 }
