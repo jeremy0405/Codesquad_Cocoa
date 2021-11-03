@@ -24,6 +24,7 @@ public class RPG {
             }
             System.out.println("");
         }
+        System.out.println("");
     }
 
     public static int[] getMonsterLocation() {
@@ -58,6 +59,7 @@ public class RPG {
     private static int[] MovePlayer(String[][] map, int x, int y) {
         Scanner sc = new Scanner(System.in);
 
+        System.out.print("w a s d 중 하나를 입력하세요  ");
         String a = sc.nextLine();
 
         int[] xy = new int[2];
@@ -175,6 +177,7 @@ public class RPG {
             printMap(map);
 
             Player = MovePlayer(map, Player[0], Player[1]);
+            System.out.println("");
 
 
 //            System.out.printf("Mine : %d, %d\n", MineLocation[0],
