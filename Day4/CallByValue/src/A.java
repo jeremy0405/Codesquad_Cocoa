@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public class A {
+public class A {
+    public int value;
+    A(int i){
+        this.value = i;
+    }
+
 }
