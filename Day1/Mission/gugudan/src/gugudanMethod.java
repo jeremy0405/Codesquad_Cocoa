@@ -17,14 +17,25 @@ public class gugudanMethod {
 
     }
 
-    public static void main(String[] args) throws IOException {
+    public static int[] getNums() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int num1 = Integer.parseInt(br.readLine());
-        int num2 = Integer.parseInt(br.readLine());
-        br.close();
+        System.out.println("시작 단과 끝 단을 입력하세요.");
+        System.out.println("ex) 2");
+        System.out.println("    5");
 
-        for (int i = num1; i <= num2; i++) {
+        int[] num = new int[2];
+        num[0] = Integer.parseInt(br.readLine());
+        num[1] = Integer.parseInt(br.readLine());
+
+        br.close();
+        return num;
+    }
+
+    public static void main(String[] args) throws IOException {
+        int[] num = getNums();
+
+        for (int i = num[0]; i <= num[1]; i++) {
             printGugudan(i);
         }
     }
