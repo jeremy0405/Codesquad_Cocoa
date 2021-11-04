@@ -1,11 +1,14 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 public class GetIndian {
 
-    public static int[] Getbirthday() throws IOException {
+    public static int[] getBirthday() throws IOException {
         int[] arr = new int[3];
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -16,7 +19,7 @@ public class GetIndian {
         return arr;
     }
 
-    public static void PrintIndianName(int y, int m, int d){
+    public static void printIndianName(int y, int m){
         int y_idx = y % 10;
 
         switch(y_idx){
@@ -56,40 +59,40 @@ public class GetIndian {
 
         switch(m) {
             case 1:
-                System.out.print("늑대 ");
+                System.out.print("늑대");
                 break;
             case 2:
-                System.out.print("태양 ");
+                System.out.print("태양");
                 break;
             case 3:
-                System.out.print("양 ");
+                System.out.print("양");
                 break;
             case 4:
-                System.out.print("매 ");
+                System.out.print("매");
                 break;
             case 5:
-                System.out.print("황소 ");
+                System.out.print("황소");
                 break;
             case 6:
-                System.out.print("불꽃 ");
+                System.out.print("불꽃");
                 break;
             case 7:
-                System.out.print("나무 ");
+                System.out.print("나무");
                 break;
             case 8:
-                System.out.print("달빛 ");
+                System.out.print("달빛");
                 break;
             case 9:
-                System.out.print("말 ");
+                System.out.print("말");
                 break;
             case 10:
-                System.out.print("돼지 ");
+                System.out.print("돼지");
                 break;
             case 11:
-                System.out.print("하늘 ");
+                System.out.print("하늘");
                 break;
             case 12:
-                System.out.print("바람 ");
+                System.out.print("바람");
                 break;
             default :
                 System.out.println("month 처리 중 오류 발생");
@@ -98,11 +101,30 @@ public class GetIndian {
 
     }
 
+    public static void printIndianLastName(int d) {
+        String[] ddd = new String[31];
+        List<String> list = new ArrayList<>();
+        try{
+            list = Files.readAllLines(Path.of(
+                "C:\\Users\\hsjan\\Desktop\\Codesquad_Cocoa\\Day3\\GetIndian\\src\\ddd.txt"), StandardCharsets.UTF_8);
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+
+        for(int i = 0; i < list.size(); i++){
+            ddd[i] = list.get(i).toString();
+        }
+        System.out.println(ddd[d-1]);
+
+    }
+
     public static void main(String[] args) throws IOException {
         System.out.println("생년월일을 입력하세요. ex) 1996 04 05");
-        int[] birthday = Getbirthday();
+        int[] birthday = getBirthday();
 
-        PrintIndianName(birthday[0], birthday[1],birthday[2]);
+        printIndianName(birthday[0], birthday[1]);
+
+        printIndianLastName(birthday[2]);
 
     }
 
