@@ -181,11 +181,11 @@ public class Main {
 
         for (int i = 0; i < 5; i++) {
             if (arr[year - 2021][month - 1][day - 1][i] == null) {
-                System.out.println("적요를 입력해 주세요.");
+                System.out.print("적요를 입력해 주세요 : ");
                 arr[year - 2021][month - 1][day - 1][i] = sc.nextLine();
-                System.out.println("수입을 입력해 주세요");
+                System.out.print("수입을 입력해 주세요 : ");
                 arrMoney[year - 2021][month - 1][day - 1][i][0] = sc.nextInt();
-                System.out.println("지출을 입력해 주세요");
+                System.out.print("지출을 입력해 주세요 : ");
                 arrMoney[year - 2021][month - 1][day - 1][i][1] = sc.nextInt();
                 sc.nextLine();
                 break;
