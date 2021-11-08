@@ -1,14 +1,17 @@
-package datemanager;
+package householdaccounts.datamanager;
 
 import java.util.Scanner;
 
 public class RegisterUser {
-    String name;
+    static String[] nameandpassword = new String[2];
 
-    public String getName() {
+    public static String[] getNameAndPassword() {
         Scanner sc = new Scanner(System.in);
-        this.name = sc.next();
-        return this.name;
+        nameandpassword[0] = sc.next();
+        nameandpassword[1] = sc.next();
+        sc.close();
+        return nameandpassword;
     }
+
 
 }
