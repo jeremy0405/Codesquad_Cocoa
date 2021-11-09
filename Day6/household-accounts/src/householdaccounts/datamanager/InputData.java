@@ -1,25 +1,28 @@
 package householdaccounts.datamanager;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class InputData {
 
-    public static ArrayList<Integer> year = new ArrayList<>();
-    public static ArrayList<Integer> month = new ArrayList<>();
-    public static ArrayList<Integer> day = new ArrayList<>();
+    public static ArrayList<Integer>[][][] yymmdd = new ArrayList[5][12][31];
+
     public static String content;
     public static int plusmoney;
     public static int minusmoney;
 
-    public static void setYear(ArrayList<Integer> year) {
-        InputData.year = year;
-    }
+    public static int[] getYymmdd() {
+        System.out.println("년 / 월 / 일 입력");
+        Scanner sc = new Scanner(System.in);
+        int[] ymd = new int[3];
+        int year = sc.nextInt();
+        int month = sc.nextInt();
+        int day = sc.nextInt();
 
-    public static void setMonth(ArrayList<Integer> month) {
-        InputData.year = month;
-    }
+        ymd[0] = year;
+        ymd[1] = month;
+        ymd[2] = day;
 
-    public static void setDay(ArrayList<Integer> day) {
-        InputData.year = year;
+        return ymd;
     }
 }
