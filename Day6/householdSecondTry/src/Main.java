@@ -19,7 +19,7 @@ public class Main {
             workHouseholdAccount = getUser();
         }
 
-        System.out.println("======================================");
+        System.out.println("=====================");
         System.out.println(UserID.get(Useridx) + "님 환영합니다!!");
 
         boolean keepWork = true;
@@ -30,12 +30,10 @@ public class Main {
     }
 
     private static boolean chooseFunction() {
-        System.out.println("데이터 입력 : I");
-        System.out.println("데이터 삭제 : D");
-        System.out.println("데이터 수정 : R");
-        System.out.println("해당 월의 지출 내역 확인 : P");
-        System.out.println("다른 아이디로 로그인 : A");
-        System.out.println("종료 : Q");
+        System.out.println("===================================================================================================");
+        System.out.println("I : 데이터 입력\t D : 데이터 삭제\t R : 데이터 수정 \t P : 데이터 출력\t A : 다른 아이디로 로그인\t Q : 종료");
+        System.out.println("===================================================================================================");
+
         String choose = sc.nextLine();
 
         switch (choose) {
@@ -167,7 +165,6 @@ public class Main {
         }
         System.out.println("데이터 삭제 완료!!");
         System.out.println("===========================");
-        return;
     }
 
     private static void getData() {
@@ -222,7 +219,7 @@ public class Main {
 
         }
         System.out.println("이번 달 손익 : " + money + "원");
-        System.out.println("===========================================");
+        System.out.println("======================================================");
     }
 
     private static boolean getUser() {
