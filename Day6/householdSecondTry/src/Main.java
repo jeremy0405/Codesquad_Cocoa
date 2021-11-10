@@ -1,3 +1,9 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.net.Inet4Address;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -55,10 +61,7 @@ public class Main {
                 break;
             case "Q":
                 System.out.println("시스템을 종료합니다.");
-
-                //TODO : txt에 저장하는 메소드가 필요.
-                // 년, 월, 일, 적요, 수입, 지출, 소비 유형 저장.
-
+                fileWrite();
                 return false;
             default:
                 System.out.println("잘못 입력하셨습니다. 다시 입력해 주세요");
@@ -66,6 +69,34 @@ public class Main {
                 return chooseFunction();
         }
         return true;
+    }
+
+    private static void fileWrite() {
+        try {
+            FileWriter fw = new FileWriter("data.txt", false);
+            BufferedWriter writer = new BufferedWriter(fw);
+            for (int i = 0; i < 2; i++) {
+                for (int j = 0; j < 12; j++) {
+                    for (int k = 0; k < 31; k++) {
+                        for (int l = 0; l < 5; l++) {
+                            if (text[i][j][k][l] != null) {
+                                writer.append(String.valueOf(i)).append(" ")
+                                    .append(String.valueOf(j)).append(" ")
+                                    .append(String.valueOf(k)).append(" ")
+                                    .append(String.valueOf(l)).append(" ")
+                                    .append(text[i][j][k][l]).append(" ")
+                                    .append(String.valueOf(arrMoney[i][j][k][l][0])).append(" ")
+                                    .append(String.valueOf(arrMoney[i][j][k][l][1])).append(" ")
+                                    .append(type[i][j][k][l]).append("\n");
+                            }
+                        }
+                    }
+                }
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void reviseData() {
@@ -199,7 +230,7 @@ public class Main {
                 System.out.print("지출을 입력해 주세요 : ");
                 arrMoney[year - 2021][month - 1][day - 1][i][1] = sc.nextInt();
                 sc.nextLine();
-                System.out.print("소비 유형을 입력해 주세요 ( 현금 or 카드 )");
+                System.out.print("소비 유형을 입력해 주세요 (현금 or 카드) ");
                 type[year - 2021][month - 1][day - 1][i] = sc.nextLine();
                 break;
             }
@@ -235,7 +266,7 @@ public class Main {
             }
 
         }
-        System.out.println("이번 달 손익 : " + money + "원");
+        System.out.println("손익 : " + money + "원");
         System.out.println("======================================================");
         System.out.println("");
     }
@@ -247,8 +278,7 @@ public class Main {
         if (isNewAccount.equals("Y")) {
             getUserInformation();
             Useridx = idx - 1;
-            //TODO getData 가 필요함
-            // text 파일에서 값을 읽어와서 데이터에 저장해놔야 함.
+            fileRead();
             return false;
         }
         if (isNewAccount.equals("N")) {
@@ -262,6 +292,26 @@ public class Main {
             }
         }
         return true;
+    }
+
+    private static void fileRead() {
+        try (
+            FileReader fr = new FileReader("data.txt");
+            BufferedReader br = new BufferedReader(fr);
+        ) {
+            String readLine = null;
+            while ((readLine = br.readLine()) != null) {
+                String[] s = readLine.split(" ");
+
+                text[Integer.parseInt(s[0])][Integer.parseInt(s[1])][Integer.parseInt(s[2])][Integer.parseInt(s[3])] = s[4];
+                arrMoney[Integer.parseInt(s[0])][Integer.parseInt(s[1])][Integer.parseInt(s[2])][Integer.parseInt(s[3])][0] = Integer.parseInt(s[5]);
+                arrMoney[Integer.parseInt(s[0])][Integer.parseInt(s[1])][Integer.parseInt(s[2])][Integer.parseInt(s[3])][1] = Integer.parseInt(s[6]);
+                type[Integer.parseInt(s[0])][Integer.parseInt(s[1])][Integer.parseInt(s[2])][Integer.parseInt(s[3])] = s[7];
+
+            }
+        } catch (IOException e) {
+            System.out.println(e);
+        }
     }
 
     private static int logIn() {
