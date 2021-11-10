@@ -3,7 +3,6 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.net.Inet4Address;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -38,11 +37,11 @@ public class Main {
 
     private static boolean chooseFunction() {
         System.out.println(
-            "===========================================================================");
+            "=============================================================================================");
         System.out.println(
-            "I : 데이터 입력\t D : 데이터 삭제\t R : 데이터 수정 \t P : 데이터 출력\t Q : 종료");
+            "I : 데이터 입력\t D : 데이터 삭제\t R : 데이터 수정 \t P : 데이터 출력 \t S : 데이터 검색 \t Q : 종료");
         System.out.println(
-            "===========================================================================");
+            "=============================================================================================");
 
         String choose = sc.nextLine();
 
@@ -59,6 +58,9 @@ public class Main {
             case "P":
                 printData();
                 break;
+            case "S":
+                searchData();
+                break;
             case "Q":
                 System.out.println("시스템을 종료합니다.");
                 fileWrite();
@@ -69,6 +71,88 @@ public class Main {
                 return chooseFunction();
         }
         return true;
+    }
+
+    private static void searchData() {
+        System.out.println("데이터를 검색합니다.");
+
+        System.out.println("적요를 통한 검색을 원하시면 1 >>>");
+        System.out.print("소비 유형을 통한 검색을 원하시면 2 >>> ");
+
+        int val = sc.nextInt();
+        sc.nextLine();
+
+        if(val == 1){
+            searchText();
+        } else if (val == 2) {
+            searchType();
+        } else {
+            System.out.println("잘못 입력하셨습니다.");
+            System.out.println("==================================");
+        }
+
+
+
+    }
+
+    private static void searchType() {
+        System.out.println("검색하고 싶은 데이터의 년, 월, 소비 유형을 입력하세요. ex) 2021 11 카드");
+        int Syear = sc.nextInt();
+        int Smonth = sc.nextInt();
+        String Stype = sc.next();
+        sc.nextLine();
+        int getmoney;
+        int losemoney;
+        int money = 0;
+
+        for (int i = 0; i < 31; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (Stype.equals(type[Syear - 2021][Smonth - 1][i][j])) {
+                    getmoney = 0;
+                    losemoney = 0;
+                    System.out.printf("%4d %02d %02d  ", Syear, Smonth, i);
+                    getmoney = arrMoney[Syear - 2021][Smonth - 1][i][j][0];
+                    losemoney = arrMoney[Syear - 2021][Smonth - 1][i][j][1];
+                    System.out.printf(" 적요 : %8s  수입 : %8d  지출 : %8d    소비 유형 : %3s\n",
+                        text[Syear - 2021][Smonth - 1][i][j], getmoney, losemoney,
+                        type[Syear - 2021][Smonth - 1][i][j]);
+                    money = money + getmoney - losemoney;
+                }
+            }
+        }
+        System.out.println("손익 : " + money + "원");
+        System.out.println("======================================================");
+        System.out.println("");
+    }
+
+    private static void searchText() {
+        System.out.println("검색하고 싶은 데이터의 년, 월, 적요을 입력하세요. ex) 2021 11 coffee");
+        int Syear = sc.nextInt();
+        int Smonth = sc.nextInt();
+        String Stext = sc.next();
+        sc.nextLine();
+        int getmoney;
+        int losemoney;
+        int money = 0;
+
+        for (int i = 0; i < 31; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (Stext.equals(text[Syear - 2021][Smonth - 1][i][j])) {
+                    getmoney = 0;
+                    losemoney = 0;
+                    System.out.printf("%4d %02d %02d  ", Syear, Smonth, i);
+                    getmoney = arrMoney[Syear - 2021][Smonth - 1][i][j][0];
+                    losemoney = arrMoney[Syear - 2021][Smonth - 1][i][j][1];
+                    System.out.printf(" 적요 : %8s  수입 : %8d  지출 : %8d    소비 유형 : %3s\n",
+                        text[Syear - 2021][Smonth - 1][i][j], getmoney, losemoney,
+                        type[Syear - 2021][Smonth - 1][i][j]);
+                    money = money + getmoney - losemoney;
+                }
+            }
+        }
+        System.out.println("손익 : " + money + "원");
+        System.out.println("======================================================");
+        System.out.println("");
     }
 
     private static void fileWrite() {
@@ -303,10 +387,14 @@ public class Main {
             while ((readLine = br.readLine()) != null) {
                 String[] s = readLine.split(" ");
 
-                text[Integer.parseInt(s[0])][Integer.parseInt(s[1])][Integer.parseInt(s[2])][Integer.parseInt(s[3])] = s[4];
-                arrMoney[Integer.parseInt(s[0])][Integer.parseInt(s[1])][Integer.parseInt(s[2])][Integer.parseInt(s[3])][0] = Integer.parseInt(s[5]);
-                arrMoney[Integer.parseInt(s[0])][Integer.parseInt(s[1])][Integer.parseInt(s[2])][Integer.parseInt(s[3])][1] = Integer.parseInt(s[6]);
-                type[Integer.parseInt(s[0])][Integer.parseInt(s[1])][Integer.parseInt(s[2])][Integer.parseInt(s[3])] = s[7];
+                text[Integer.parseInt(s[0])][Integer.parseInt(s[1])][Integer.parseInt(
+                    s[2])][Integer.parseInt(s[3])] = s[4];
+                arrMoney[Integer.parseInt(s[0])][Integer.parseInt(s[1])][Integer.parseInt(
+                    s[2])][Integer.parseInt(s[3])][0] = Integer.parseInt(s[5]);
+                arrMoney[Integer.parseInt(s[0])][Integer.parseInt(s[1])][Integer.parseInt(
+                    s[2])][Integer.parseInt(s[3])][1] = Integer.parseInt(s[6]);
+                type[Integer.parseInt(s[0])][Integer.parseInt(s[1])][Integer.parseInt(
+                    s[2])][Integer.parseInt(s[3])] = s[7];
 
             }
         } catch (IOException e) {
