@@ -5,7 +5,8 @@ public class Main {
 
     public static ArrayList<String> UserID = new ArrayList<>();
     public static ArrayList<String> UserPassword = new ArrayList<>();
-    public static String[][][][] arr = new String[2][12][31][5];
+    public static String[][][][] text = new String[2][12][31][5];
+    public static String[][][][] type = new String[2][12][31][5];
     public static int[][][][][] arrMoney = new int[2][12][31][5][2];
 
     public static int idx = 0;
@@ -31,11 +32,11 @@ public class Main {
 
     private static boolean chooseFunction() {
         System.out.println(
-            "===================================================================================================");
+            "===========================================================================");
         System.out.println(
-            "I : 데이터 입력\t D : 데이터 삭제\t R : 데이터 수정 \t P : 데이터 출력\t A : 다른 아이디로 로그인\t Q : 종료");
+            "I : 데이터 입력\t D : 데이터 삭제\t R : 데이터 수정 \t P : 데이터 출력\t Q : 종료");
         System.out.println(
-            "===================================================================================================");
+            "===========================================================================");
 
         String choose = sc.nextLine();
 
@@ -52,13 +53,12 @@ public class Main {
             case "P":
                 printData();
                 break;
-            case "A":
-                // 구현 실패.. 메인 문 자체를 while 안에 넣어서 boolean으로 하는 방법 말고는 생각 안남.
-                // 위 방법대로 시도했지만 결과가 좋지 않음.
-                // 인스턴스를 생성해서 각자 고유한 arr과 arrMoney를 갖도록 해야지 각자의 가계부 생성 가능.
-                break;
             case "Q":
                 System.out.println("시스템을 종료합니다.");
+
+                //TODO : txt에 저장하는 메소드가 필요.
+                // 년, 월, 일, 적요, 수입, 지출, 소비 유형 저장.
+
                 return false;
             default:
                 System.out.println("잘못 입력하셨습니다. 다시 입력해 주세요");
@@ -77,33 +77,36 @@ public class Main {
         sc.nextLine();
 
         for (int i = 0; i < 5; i++) {
-            if (arr[Ryear - 2021][Rmonth - 1][Rday - 1][i] != null) {
-                System.out.printf("%d ; 적요 : %8s  수입 : %8d  지출 : %8d\n",
+            if (text[Ryear - 2021][Rmonth - 1][Rday - 1][i] != null) {
+                System.out.printf("%d ; 적요 : %8s  수입 : %8d  지출 : %8d  소비 유형 : %4s\n",
                     i,
-                    arr[Ryear - 2021][Rmonth - 1][Rday - 1][i],
+                    text[Ryear - 2021][Rmonth - 1][Rday - 1][i],
                     arrMoney[Ryear - 2021][Rmonth - 1][Rday - 1][i][0],
-                    arrMoney[Ryear - 2021][Rmonth - 1][Rday - 1][i][1]);
+                    arrMoney[Ryear - 2021][Rmonth - 1][Rday - 1][i][1],
+                    type[Ryear - 2021][Rmonth - 1][Rday - 1][i]);
             }
         }
         System.out.println("수정하고 싶은 인덱스를 입력하세요.");
         int num = sc.nextInt();
         sc.nextLine();
         System.out.println("수정하고 싶은 부분을 알려주세요");
-        System.out.println("0 : 전체\t 1 : 적요\t 2 : 수입\t 3 : 지출");
+        System.out.println("0 : 전체\t 1 : 적요\t 2 : 수입\t 3 : 지출\t 4 : 소비 유형");
         int validation = sc.nextInt();
         sc.nextLine();
 
         if (validation == 0) {
             System.out.println("적요를 입력해 주세요.");
-            arr[Ryear - 2021][Rmonth - 1][Rday - 1][num] = sc.nextLine();
+            text[Ryear - 2021][Rmonth - 1][Rday - 1][num] = sc.nextLine();
             System.out.println("수입을 입력해 주세요");
             arrMoney[Ryear - 2021][Rmonth - 1][Rday - 1][num][0] = sc.nextInt();
             System.out.println("지출을 입력해 주세요");
             arrMoney[Ryear - 2021][Rmonth - 1][Rday - 1][num][1] = sc.nextInt();
             sc.nextLine();
+            System.out.print("소비 유형을 입력해 주세요 (현금 or 카드) ");
+            type[Ryear - 2021][Rmonth - 1][Rday - 1][num] = sc.nextLine();
         } else if (validation == 1) {
             System.out.println("적요를 입력해 주세요.");
-            arr[Ryear - 2021][Rmonth - 1][Rday - 1][num] = sc.nextLine();
+            text[Ryear - 2021][Rmonth - 1][Rday - 1][num] = sc.nextLine();
         } else if (validation == 2) {
             System.out.println("수입을 입력해 주세요");
             arrMoney[Ryear - 2021][Rmonth - 1][Rday - 1][num][0] = sc.nextInt();
@@ -112,6 +115,9 @@ public class Main {
             System.out.println("지출을 입력해 주세요");
             arrMoney[Ryear - 2021][Rmonth - 1][Rday - 1][num][1] = sc.nextInt();
             sc.nextLine();
+        } else if (validation == 4) {
+            System.out.print("소비 유형을 입력해 주세요 ( 현금 or 카드 )");
+            type[Ryear - 2021][Rmonth - 1][Rday - 1][num] = sc.nextLine();
         }
     }
 
@@ -124,10 +130,10 @@ public class Main {
         sc.nextLine();
 
         for (int i = 0; i < 5; i++) {
-            if (arr[Dyear - 2021][Dmonth - 1][Dday - 1][i] != null) {
+            if (text[Dyear - 2021][Dmonth - 1][Dday - 1][i] != null) {
                 System.out.printf("%d ; 적요 : %8s  수입 : %8d  지출 : %8d\n",
                     i,
-                    arr[Dyear - 2021][Dmonth - 1][Dday - 1][i],
+                    text[Dyear - 2021][Dmonth - 1][Dday - 1][i],
                     arrMoney[Dyear - 2021][Dmonth - 1][Dday - 1][i][0],
                     arrMoney[Dyear - 2021][Dmonth - 1][Dday - 1][i][1]);
             }
@@ -136,35 +142,40 @@ public class Main {
         int num = sc.nextInt();
         sc.nextLine();
         if (num == 0) {
-            arr[Dyear - 2021][Dmonth - 1][Dday - 1][0] = null;
+            text[Dyear - 2021][Dmonth - 1][Dday - 1][0] = null;
             arrMoney[Dyear - 2021][Dmonth - 1][Dday - 1][0][0] = 0;
             arrMoney[Dyear - 2021][Dmonth - 1][Dday - 1][0][1] = 0;
+            type[Dyear - 2021][Dmonth - 1][Dday - 1][0] = null;
             System.out.println("데이터 삭제 완료!!");
             System.out.println("===========================");
             return;
         }
 
         if (num == 4) {
-            arr[Dyear - 2021][Dmonth - 1][Dday - 1][4] = null;
+            text[Dyear - 2021][Dmonth - 1][Dday - 1][4] = null;
             arrMoney[Dyear - 2021][Dmonth - 1][Dday - 1][4][0] = 0;
             arrMoney[Dyear - 2021][Dmonth - 1][Dday - 1][4][1] = 0;
+            type[Dyear - 2021][Dmonth - 1][Dday - 1][0] = null;
             System.out.println("데이터 삭제 완료!!");
             System.out.println("===========================");
             return;
         }
 
         for (int i = num; i < 4; i++) {
-            if (arr[Dyear - 2021][Dmonth - 1][Dday - 1][i + 1] != null) {
-                arr[Dyear - 2021][Dmonth - 1][Dday - 1][i] = arr[Dyear - 2021][Dmonth - 1][Dday
+            if (text[Dyear - 2021][Dmonth - 1][Dday - 1][i + 1] != null) {
+                text[Dyear - 2021][Dmonth - 1][Dday - 1][i] = text[Dyear - 2021][Dmonth - 1][Dday
                     - 1][i + 1];
                 arrMoney[Dyear - 2021][Dmonth - 1][Dday - 1][i][0] = arrMoney[Dyear - 2021][Dmonth
                     - 1][Dday - 1][i + 1][0];
                 arrMoney[Dyear - 2021][Dmonth - 1][Dday - 1][i][1] = arrMoney[Dyear - 2021][Dmonth
                     - 1][Dday - 1][i + 1][1];
+                type[Dyear - 2021][Dmonth - 1][Dday - 1][i] = type[Dyear - 2021][Dmonth - 1][Dday
+                    - 1][i + 1];
             }
-            arr[Dyear - 2021][Dmonth - 1][Dday - 1][i + 1] = null;
+            text[Dyear - 2021][Dmonth - 1][Dday - 1][i + 1] = null;
             arrMoney[Dyear - 2021][Dmonth - 1][Dday - 1][i + 1][0] = 0;
             arrMoney[Dyear - 2021][Dmonth - 1][Dday - 1][i + 1][1] = 0;
+            type[Dyear - 2021][Dmonth - 1][Dday - 1][i + 1] = null;
         }
         System.out.println("데이터 삭제 완료!!");
         System.out.println("===========================");
@@ -180,14 +191,16 @@ public class Main {
         sc.nextLine();
 
         for (int i = 0; i < 5; i++) {
-            if (arr[year - 2021][month - 1][day - 1][i] == null) {
+            if (text[year - 2021][month - 1][day - 1][i] == null) {
                 System.out.print("적요를 입력해 주세요 : ");
-                arr[year - 2021][month - 1][day - 1][i] = sc.nextLine();
+                text[year - 2021][month - 1][day - 1][i] = sc.nextLine();
                 System.out.print("수입을 입력해 주세요 : ");
                 arrMoney[year - 2021][month - 1][day - 1][i][0] = sc.nextInt();
                 System.out.print("지출을 입력해 주세요 : ");
                 arrMoney[year - 2021][month - 1][day - 1][i][1] = sc.nextInt();
                 sc.nextLine();
+                System.out.print("소비 유형을 입력해 주세요 ( 현금 or 카드 )");
+                type[year - 2021][month - 1][day - 1][i] = sc.nextLine();
                 break;
             }
         }
@@ -207,14 +220,15 @@ public class Main {
         for (int j = 1; j <= 31; j++) {
 
             for (int i = 0; i < 5; i++) {
-                if (arr[Pyear - 2021][Pmonth - 1][j - 1][i] != null) {
+                if (text[Pyear - 2021][Pmonth - 1][j - 1][i] != null) {
                     getmoney = 0;
                     losemoney = 0;
-                    System.out.printf("%4d%4d %02d  ", Pyear, Pmonth, j);
+                    System.out.printf("%4d %02d %02d  ", Pyear, Pmonth, j);
                     getmoney = arrMoney[Pyear - 2021][Pmonth - 1][j - 1][i][0];
                     losemoney = arrMoney[Pyear - 2021][Pmonth - 1][j - 1][i][1];
-                    System.out.printf(" 적요 : %8s  수입 : %8d  지출 : %8d\n",
-                        arr[Pyear - 2021][Pmonth - 1][j - 1][i], getmoney, losemoney);
+                    System.out.printf(" 적요 : %8s  수입 : %8d  지출 : %8d    소비 유형 : %3s\n",
+                        text[Pyear - 2021][Pmonth - 1][j - 1][i], getmoney, losemoney,
+                        type[Pyear - 2021][Pmonth - 1][j - 1][i]);
                     money = money + getmoney - losemoney;
                 }
 
@@ -223,6 +237,7 @@ public class Main {
         }
         System.out.println("이번 달 손익 : " + money + "원");
         System.out.println("======================================================");
+        System.out.println("");
     }
 
     private static boolean getUser() {
@@ -232,6 +247,8 @@ public class Main {
         if (isNewAccount.equals("Y")) {
             getUserInformation();
             Useridx = idx - 1;
+            //TODO getData 가 필요함
+            // text 파일에서 값을 읽어와서 데이터에 저장해놔야 함.
             return false;
         }
         if (isNewAccount.equals("N")) {
