@@ -1,2 +1,19 @@
-package PACKAGE_NAME;public class Monster {
+public class Monster {
+
+    private int x;
+    private int y;
+
+    Monster(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
 }
