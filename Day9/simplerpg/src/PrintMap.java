@@ -1,4 +1,4 @@
-public class printMap {
+public class PrintMap {
 
     public static void print(String[][] map) {
         System.out.println("");

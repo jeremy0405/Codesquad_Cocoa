@@ -3,21 +3,32 @@ import java.util.Scanner;
 
 public class Game {
 
-    private final int Map_X = 5;
-    private final int Map_Y = 5;
-    private final int PLAYER_X = 2;
-    private final int PLAYER_Y = 2;
-    public String[][] map;
+    private static final int MAP_X = 5;
+    private static final int MAP_Y = 5;
+    private static final int PLAYER_X = 2;
+    private static final int PLAYER_Y = 2;
+    private String[][] map;
 
     private Player player;
     private Monster monster;
     private Mine mine;
 
+    private final Random ran = new Random();
+
+    public void getUser(){
+        System.out.println("게임을 시작합니다.");
+        System.out.print("이름을 입력해주세요 >>> ");
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        System.out.println(s + "님 환영합니다!!");
+        player = new Player(s);
+    }
+
     public void init() {
-        createMap(Map_X, Map_Y);
+        createMap(MAP_X, MAP_Y);
         createValues();
         setMap();
-        printMap.print(map);
+        PrintMap.print(map);
     }
 
     public void run() {
@@ -34,7 +45,7 @@ public class Game {
                 init();
             }
             isRun = checkMine(player.getX(), player.getY());
-            if(isRun == false) {
+            if(!isRun) {
                 System.out.println("FINAL SCORE : " + score);
             }
         }
@@ -53,12 +64,12 @@ public class Game {
         player.move(player.getX(), player.getY());
         initialMap(map);
         setMap();
-        printMap.print(map);
+        PrintMap.print(map);
     }
 
     private void initialMap(String[][] map) {
-        for (int i = 0; i < Map_X; i++) {
-            for (int j = 0; j < Map_Y; j++) {
+        for (int i = 0; i < MAP_X; i++) {
+            for (int j = 0; j < MAP_Y; j++) {
                 map[i][j] = "□";
             }
         }
@@ -134,7 +145,7 @@ public class Game {
     }
 
     private int[] getRandomLocation() {
-        Random ran = new Random();
+
         int[] rxy = new int[2];
         rxy[0] = ran.nextInt(5);
         rxy[1] = ran.nextInt(5);
@@ -142,7 +153,8 @@ public class Game {
     }
 
     private void createPlayer() {
-        player = new Player(PLAYER_X, PLAYER_Y);
+        player.setX(PLAYER_X);
+        player.setY(PLAYER_Y);
     }
 
     private void createMap(int w, int h) {
