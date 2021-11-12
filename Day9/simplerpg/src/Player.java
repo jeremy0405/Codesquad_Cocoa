@@ -3,18 +3,12 @@ import java.util.Scanner;
 
 public class Player {
 
-    private String name;
     private int x;
     private int y;
 
-    public Player(String name, int x, int y) {
-        this.name = name;
+    public Player(int x, int y) {
         this.x = x;
         this.y = y;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public int getX() {
@@ -32,15 +26,31 @@ public class Player {
         String s = sc.next();
         switch(s){
             case "w" :
+                if(x <= 0){
+                    System.out.println("그 방향으로 움직일 수 없습니다.");
+                    break;
+                }
                 this.x = x - 1;
                 break;
             case "a" :
+                if(y <= 0){
+                    System.out.println("그 방향으로 움직일 수 없습니다.");
+                    break;
+                }
                 this.y = y - 1;
                 break;
             case "s" :
+                if(x >= 4){
+                    System.out.println("그 방향으로 움직일 수 없습니다.");
+                    break;
+                }
                 this.x = x + 1;
                 break;
             case "d" :
+                if(y >= 4){
+                    System.out.println("그 방향으로 움직일 수 없습니다.");
+                    break;
+                }
                 this.y = y + 1;
                 break;
             default:

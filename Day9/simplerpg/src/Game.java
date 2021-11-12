@@ -27,16 +27,17 @@ public class Game {
         while (isRun) {
             System.out.print("움직일 방향을 입력해주세요.(w a s d) >>> ");
             movePlayerAndPirntMap();
-
             if (checkMonster(player.getX(), player.getY())) {
                 score += 100;
+                System.out.println("\n\n\n");
+                System.out.println("SCORE : " + score);
                 init();
             }
-
             isRun = checkMine(player.getX(), player.getY());
-
+            if(isRun == false) {
+                System.out.println("FINAL SCORE : " + score);
+            }
         }
-
 
     }
 
@@ -141,15 +142,7 @@ public class Game {
     }
 
     private void createPlayer() {
-        String name = getUserName();
-        player = new Player(name, PLAYER_X, PLAYER_Y);
-    }
-
-    private String getUserName() {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("이름을 입력해주세요! >>> ");
-        String name = sc.nextLine();
-        return name;
+        player = new Player(PLAYER_X, PLAYER_Y);
     }
 
     private void createMap(int w, int h) {
