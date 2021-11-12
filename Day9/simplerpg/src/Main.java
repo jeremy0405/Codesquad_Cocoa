@@ -4,10 +4,7 @@ public class Main {
 
         Game game = new Game();
         game.init();
-
-        printMap p = new printMap(game);
-        p.print(game);
-
+        game.run();
 
     }
 

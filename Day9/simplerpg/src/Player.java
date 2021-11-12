@@ -1,3 +1,6 @@
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Player {
 
     private String name;
@@ -22,10 +25,27 @@ public class Player {
         return y;
     }
 
-    private void move(int x, int y) {
-
-        //TODO 사용자가 wasd 누르면 상하좌우 이동 구현
-
+    public void move(int x, int y) {
+        // TODO
+        //  x 또는 y 가 0 또는 4가 입력되어 왔을 때 움직일 수 없게 해야 함.
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        switch(s){
+            case "w" :
+                this.x = x - 1;
+                break;
+            case "a" :
+                this.y = y - 1;
+                break;
+            case "s" :
+                this.x = x + 1;
+                break;
+            case "d" :
+                this.y = y + 1;
+                break;
+            default:
+                System.out.println("잘못 입력하셨습니다.");
+        }
+        System.out.println("Player : " + this.x + " " + this.y);
     }
-
 }
