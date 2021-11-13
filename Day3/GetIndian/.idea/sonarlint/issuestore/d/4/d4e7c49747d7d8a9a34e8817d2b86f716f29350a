@@ -1,0 +1,32 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(£şÁĞ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¶Íöú
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(‹â¾¬
+S	java:S106$"9Replace this use of System.out or System.err by a logger.(¤Şš…øÿÿÿÿ
+S	java:S106'"9Replace this use of System.out or System.err by a logger.(á€Ø™ùÿÿÿÿ
+S	java:S106*"9Replace this use of System.out or System.err by a logger.(˜ú¶òøÿÿÿÿ
+N	java:S106-"9Replace this use of System.out or System.err by a logger.(Ê¼ÆÛ
+N	java:S1060"9Replace this use of System.out or System.err by a logger.(¡Èç˜
+S	java:S1063"9Replace this use of System.out or System.err by a logger.(œ±À”ùÿÿÿÿ
+S	java:S1066"9Replace this use of System.out or System.err by a logger.(ÑÍãÜùÿÿÿÿ
+N	java:S1069"9Replace this use of System.out or System.err by a logger.(„òµË
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(ÄùÄ»ùÿÿÿÿ
+S	java:S106A"9Replace this use of System.out or System.err by a logger.(î×Üéùÿÿÿÿ
+N	java:S106D"9Replace this use of System.out or System.err by a logger.(ÜÕô
+N	java:S106G"9Replace this use of System.out or System.err by a logger.(Ãóæ
+N	java:S106J"9Replace this use of System.out or System.err by a logger.(Õ—¡Ö
+M	java:S106M"9Replace this use of System.out or System.err by a logger.(˜±ók
+N	java:S106P"9Replace this use of System.out or System.err by a logger.(ªô•®
+S	java:S106S"9Replace this use of System.out or System.err by a logger.(À®š×ÿÿÿÿÿ
+N	java:S106V"9Replace this use of System.out or System.err by a logger.(ÚÄÏ
+S	java:S106Y"9Replace this use of System.out or System.err by a logger.(€ßÑÕÿÿÿÿÿ
+S	java:S106\"9Replace this use of System.out or System.err by a logger.(åğÔ¿ûÿÿÿÿ
+S	java:S106_"9Replace this use of System.out or System.err by a logger.(Öó‡ÿÿÿÿÿ
+S	java:S106b"9Replace this use of System.out or System.err by a logger.(à¤éèûÿÿÿÿ
+Z
+java:S1858s"="get" returns a string, there's no need to call "toString()".(¶ÈªÖ8­ÂØÑÎ/
+Z	java:S106u"9Replace this use of System.out or System.err by a logger.(°ğÀ¬úÿÿÿÿ8®ÂØÑÎ/
+U	java:S106z"9Replace this use of System.out or System.err by a logger.(áËÒ8¼êÚÑÎ/
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃëûÉøÿÿÿÿ
+0
+java:S1220""Move this file to a named package.

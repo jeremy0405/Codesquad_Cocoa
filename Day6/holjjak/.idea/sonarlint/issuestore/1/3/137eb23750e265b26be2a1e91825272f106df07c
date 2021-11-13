@@ -1,0 +1,111 @@
+
+k
+java:S3008	"VRename this field "PlayerMoney" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕÒÔ
+m
+java:S3008
+"WRename this field "CounterMoney" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úÜ«Í
+o
+java:S3008"YRename this field "MaxPlayerMoney" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à»öˆ
+n
+java:S3008"SRename this field "RankName" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(››İ¼øÿÿÿÿ
+j
+java:S3008"TRename this field "RankMoney" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œ»úÓ
+n
+java:S3008"SRename this field "RankTurn" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ğ¨˜ÿÿÿÿÿ
+8
+java:S2386"Make this member "protected".(››İ¼øÿÿÿÿ
+3
+java:S2386"Make this member "protected".(œ»úÓ
+8
+java:S2386"Make this member "protected".(—ğ¨˜ÿÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(”Üº—
+4
+java:S2119"Save and re-use this "Random".(¸Í×
+N	java:S106 "9Replace this use of System.out or System.err by a logger.(÷±¨â
+g
+java:S3457("Q%n should be used in place of \n to produce the platform-specific line separator.(ñÙ
+;
+java:S3457("%String contains no format specifiers.(ñÙ
+N	java:S106("9Replace this use of System.out or System.err by a logger.(ñÙ
+g
+java:S34571"Q%n should be used in place of \n to produce the platform-specific line separator.(ñÙ
+;
+java:S34571"%String contains no format specifiers.(ñÙ
+N	java:S1061"9Replace this use of System.out or System.err by a logger.(ñÙ
+S	java:S1068"9Replace this use of System.out or System.err by a logger.(ÔÅ®®ûÿÿÿÿ
+S	java:S106?"9Replace this use of System.out or System.err by a logger.(§Şãøÿÿÿÿ
+N	java:S106D"9Replace this use of System.out or System.err by a logger.(´±—
+S	java:S106L"9Replace this use of System.out or System.err by a logger.(§Şãøÿÿÿÿ
+N	java:S106Q"9Replace this use of System.out or System.err by a logger.(´±—
+S	java:S106Y"9Replace this use of System.out or System.err by a logger.(ûÔ»üÿÿÿÿ
+S	java:S106\"9Replace this use of System.out or System.err by a logger.(¯Ğª¼øÿÿÿÿ
+N	java:S106c"9Replace this use of System.out or System.err by a logger.(°üòÅ
+N	java:S106d"9Replace this use of System.out or System.err by a logger.(£®
+N	java:S106e"9Replace this use of System.out or System.err by a logger.(ÙÓÂ¹
+N	java:S106f"9Replace this use of System.out or System.err by a logger.(ü™Ü¥
+N	java:S106q"9Replace this use of System.out or System.err by a logger.(Ú™é
+T	java:S106€"9Replace this use of System.out or System.err by a logger.(ÇìŞâûÿÿÿÿ
+T	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(öôËÒúÿÿÿÿ
+O	java:S106‘"9Replace this use of System.out or System.err by a logger.(ø‰Õ¶
+m
+java:S3457“"Q%n should be used in place of \n to produce the platform-specific line separator.(ø¿‰ÿÿÿÿÿ
+T	java:S106“"9Replace this use of System.out or System.err by a logger.(ø¿‰ÿÿÿÿÿ
+[	java:S106–"9Replace this use of System.out or System.err by a logger.(ßÚäëøÿÿÿÿ8–§š¿Ğ/
+V	java:S106—"9Replace this use of System.out or System.err by a logger.(ÜûÁÅ8Éü›¿Ğ/
+n
+java:S3776›"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Ì¬üÿÿÿÿ
+o
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(ªº»Úıÿÿÿÿ
+o
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(î–˜Éüÿÿÿÿ
+t	java:S135ª"YReduce the total number of break and continue statements in this loop to use at most one.(‡ÙœÃúÿÿÿÿ
+{	java:S135¢"YReduce the total number of break and continue statements in this loop to use at most one.(Ì£Áºşÿÿÿÿ8²Õ¢¿Ğ/
+ƒ
+java:S1319"hThe type of "RankName" should be an interface such as "List" rather than the implementation "ArrayList".(››İ¼øÿÿÿÿ
+
+java:S1319"iThe type of "RankMoney" should be an interface such as "List" rather than the implementation "ArrayList".(œ»úÓ
+ƒ
+java:S1319"hThe type of "RankTurn" should be an interface such as "List" rather than the implementation "ArrayList".(—ğ¨˜ÿÿÿÿÿ
+f	java:S117j"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùåÅ
+k	java:S117k"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŞÁ¨›şÿÿÿÿ
+g	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹Ôùı
+U
+java:S1155œ">Use isEmpty() to check whether the collection is empty or not.(«‹÷¨
+}
+java:S1488"bImmediately return this expression instead of assigning it to the temporary variable "playerName".(·ãáÅûÿÿÿÿ
+l
+java:S1104	"WMake PlayerMoney a static final constant or non-public and provide accessors if needed.(ÕÒÔ
+n
+java:S1104
+"XMake CounterMoney a static final constant or non-public and provide accessors if needed.(úÜ«Í
+p
+java:S1104"ZMake MaxPlayerMoney a static final constant or non-public and provide accessors if needed.(à»öˆ
+k
+java:S1104"PMake turn a static final constant or non-public and provide accessors if needed.(Á÷ˆ¤ıÿÿÿÿ
+o
+java:S1104"TMake RankName a static final constant or non-public and provide accessors if needed.(››İ¼øÿÿÿÿ
+k
+java:S1104"UMake RankMoney a static final constant or non-public and provide accessors if needed.(œ»úÓ
+o
+java:S1104"TMake RankTurn a static final constant or non-public and provide accessors if needed.(—ğ¨˜ÿÿÿÿÿ
+i
+java:S1104"NMake sc a static final constant or non-public and provide accessors if needed.(”Ä²ıÿÿÿÿ
+F
+java:S1444	"1Make this "public static PlayerMoney" field final(ÕÒÔ
+H
+java:S1444
+"2Make this "public static CounterMoney" field final(úÜ«Í
+J
+java:S1444"4Make this "public static MaxPlayerMoney" field final(à»öˆ
+E
+java:S1444"*Make this "public static turn" field final(Á÷ˆ¤ıÿÿÿÿ
+I
+java:S1444".Make this "public static RankName" field final(››İ¼øÿÿÿÿ
+E
+java:S1444"/Make this "public static RankMoney" field final(œ»úÓ
+I
+java:S1444".Make this "public static RankTurn" field final(—ğ¨˜ÿÿÿÿÿ
+C
+java:S1444"(Make this "public static sc" field final(”Ä²ıÿÿÿÿ
+0
+java:S1220""Move this file to a named package.

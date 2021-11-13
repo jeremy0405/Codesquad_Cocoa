@@ -1,0 +1,11 @@
+
+V	java:S125"<This block of commented-out lines of code should be removed.(éöÜøùÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(¼‡Ã¶ùÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ˆ€é
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ
+D
+java:S1144%".Remove this unused private "fileWrite" method.(òûßã
+0
+java:S1220""Move this file to a named package.
+a
+java:S2095)"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(ª‚öR

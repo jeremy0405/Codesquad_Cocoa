@@ -1,0 +1,182 @@
+
+g
+java:S3008"QRename this field "UserID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦­úÛ
+l
+java:S3008"WRename this field "UserPassword" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊšÇ7
+h
+java:S3008"RRename this field "Useridx" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ç«òŠ
+3
+java:S2386"Make this member "protected".(¦­úÛ
+2
+java:S2386"Make this member "protected".(ÊšÇ7
+3
+java:S2386"Make this member "protected".(¸ÑİÉ
+3
+java:S2386"Make this member "protected".(†î¸Ì
+8
+java:S2386"Make this member "protected".(¿Ü‘ıùÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ŸÓÓ¦şÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ñîÖ
+N	java:S106'"9Replace this use of System.out or System.err by a logger.(ÆÀûı
+N	java:S106)"9Replace this use of System.out or System.err by a logger.(ÆÀûı
+N	java:S106+"9Replace this use of System.out or System.err by a logger.(ÆÀûı
+N	java:S106A"9Replace this use of System.out or System.err by a logger.(¨ìŠ”
+S	java:S106E"9Replace this use of System.out or System.err by a logger.(È«Àìùÿÿÿÿ
+N	java:S106F"9Replace this use of System.out or System.err by a logger.(ÄºÎ”
+M	java:S106M"9Replace this use of System.out or System.err by a logger.(³ÑÙ
+
+N	java:S106O"9Replace this use of System.out or System.err by a logger.(ŠÑÈÃ
+N	java:S106P"9Replace this use of System.out or System.err by a logger.(ó‚É
+S	java:S106Z"9Replace this use of System.out or System.err by a logger.(Şì’Õúÿÿÿÿ
+N	java:S106["9Replace this use of System.out or System.err by a logger.(ÄºÎ”
+S
+java:S1854p"=Remove this useless assignment to local variable "losemoney".(°ôë
+Q
+java:S1854o"<Remove this useless assignment to local variable "getmoney".(£Í>
+S	java:S106c"9Replace this use of System.out or System.err by a logger.(éöÌ½ÿÿÿÿÿ
+S	java:S106q"9Replace this use of System.out or System.err by a logger.(Ğ­öÂûÿÿÿÿ
+l
+java:S3457t"Q%n should be used in place of \n to produce the platform-specific line separator.(¢¦Ø•úÿÿÿÿ
+S	java:S106t"9Replace this use of System.out or System.err by a logger.(¢¦Ø•úÿÿÿÿ
+S	java:S106{"9Replace this use of System.out or System.err by a logger.(üØ¾Êøÿÿÿÿ
+N	java:S106|"9Replace this use of System.out or System.err by a logger.(Úñªâ
+S	java:S106}"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ
+T
+java:S1854"=Remove this useless assignment to local variable "losemoney".(°ôë
+R
+java:S1854"<Remove this useless assignment to local variable "getmoney".(£Í>
+O	java:S106"9Replace this use of System.out or System.err by a logger.(öƒÿ‰
+T	java:S106"9Replace this use of System.out or System.err by a logger.(Ğ­öÂûÿÿÿÿ
+m
+java:S3457’"Q%n should be used in place of \n to produce the platform-specific line separator.(¢¦Ø•úÿÿÿÿ
+T	java:S106’"9Replace this use of System.out or System.err by a logger.(¢¦Ø•úÿÿÿÿ
+T	java:S106™"9Replace this use of System.out or System.err by a logger.(üØ¾Êøÿÿÿÿ
+O	java:S106š"9Replace this use of System.out or System.err by a logger.(Úñªâ
+T	java:S106›"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ
+i
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(òûßã
+O	java:S106»"9Replace this use of System.out or System.err by a logger.(õÂ•ø
+T	java:S106¼"9Replace this use of System.out or System.err by a logger.(Çî¯«şÿÿÿÿ
+m
+java:S3457Ä"Q%n should be used in place of \n to produce the platform-specific line separator.(™½Š¯üÿÿÿÿ
+T	java:S106Ä"9Replace this use of System.out or System.err by a logger.(™½Š¯üÿÿÿÿ
+T	java:S106Ì"9Replace this use of System.out or System.err by a logger.(Ú”²Øşÿÿÿÿ
+T	java:S106Ï"9Replace this use of System.out or System.err by a logger.(î†Ê¶ùÿÿÿÿ
+T	java:S106Ğ"9Replace this use of System.out or System.err by a logger.(Ä³™ëúÿÿÿÿ
+T	java:S106Õ"9Replace this use of System.out or System.err by a logger.(±ı»´øÿÿÿÿ
+T	java:S106×"9Replace this use of System.out or System.err by a logger.(íÌ½”ùÿÿÿÿ
+T	java:S106Ù"9Replace this use of System.out or System.err by a logger.(®“³Úÿÿÿÿÿ
+T	java:S106Ü"9Replace this use of System.out or System.err by a logger.(Ï÷‹Øşÿÿÿÿ
+T	java:S106ß"9Replace this use of System.out or System.err by a logger.(±ı»´øÿÿÿÿ
+T	java:S106â"9Replace this use of System.out or System.err by a logger.(íÌ½”ùÿÿÿÿ
+T	java:S106æ"9Replace this use of System.out or System.err by a logger.(®“³Úÿÿÿÿÿ
+T	java:S106ê"9Replace this use of System.out or System.err by a logger.(Ï÷‹Øşÿÿÿÿ
+T	java:S106ğ"9Replace this use of System.out or System.err by a logger.(ãøÕçûÿÿÿÿ
+O	java:S106ñ"9Replace this use of System.out or System.err by a logger.(—ä™É
+h
+java:S3457ù"Q%n should be used in place of \n to produce the platform-specific line separator.(ˆÃš
+O	java:S106ù"9Replace this use of System.out or System.err by a logger.(ˆÃš
+T	java:S106€"9Replace this use of System.out or System.err by a logger.(±Ûáäùÿÿÿÿ
+O	java:S106ˆ"9Replace this use of System.out or System.err by a logger.(ÈÉ‘ô
+O	java:S106‰"9Replace this use of System.out or System.err by a logger.(²İ¨¦
+O	java:S106’"9Replace this use of System.out or System.err by a logger.(ÈÉ‘ô
+O	java:S106“"9Replace this use of System.out or System.err by a logger.(²İ¨¦
+O	java:S106§"9Replace this use of System.out or System.err by a logger.(ÈÉ‘ô
+O	java:S106¨"9Replace this use of System.out or System.err by a logger.(²İ¨¦
+T	java:S106¬"9Replace this use of System.out or System.err by a logger.(ÛÖœ£ıÿÿÿÿ
+O	java:S106­"9Replace this use of System.out or System.err by a logger.(üùÄÅ
+T	java:S106¶"9Replace this use of System.out or System.err by a logger.(âÇ§…ùÿÿÿÿ
+O	java:S106¸"9Replace this use of System.out or System.err by a logger.(‚¿Õ‰
+N	java:S106º"9Replace this use of System.out or System.err by a logger.(ğ×Ä2
+T	java:S106½"9Replace this use of System.out or System.err by a logger.(Ï÷‹Øşÿÿÿÿ
+[
+java:S1854Ô"=Remove this useless assignment to local variable "losemoney".(°ôë8§Ø†ÆĞ/
+Y
+java:S1854Ó"<Remove this useless assignment to local variable "getmoney".(£Í>8§Ø†ÆĞ/
+O	java:S106Å"9Replace this use of System.out or System.err by a logger.(ûïı
+N	java:S106Õ"9Replace this use of System.out or System.err by a logger.(Íèƒ
+t
+java:S3457Ø"Q%n should be used in place of \n to produce the platform-specific line separator.(¢¦Ø•úÿÿÿÿ8§Ø†ÆĞ/
+T	java:S106Ø"9Replace this use of System.out or System.err by a logger.(¢¦Ø•úÿÿÿÿ
+T	java:S106á"9Replace this use of System.out or System.err by a logger.(üØ¾Êøÿÿÿÿ
+O	java:S106â"9Replace this use of System.out or System.err by a logger.(Úñªâ
+T	java:S106ã"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ
+O	java:S106ç"9Replace this use of System.out or System.err by a logger.(ÔåÓµ
+T	java:S106è"9Replace this use of System.out or System.err by a logger.(û”¡úûÿÿÿÿ
+[	java:S106ö"9Replace this use of System.out or System.err by a logger.(´úÏèûÿÿÿÿ8§Ø†ÆĞ/
+[	java:S106‘"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍşÿÿÿÿ8¶Ø†ÆĞ/
+[	java:S106–"9Replace this use of System.out or System.err by a logger.(œÌû˜ùÿÿÿÿ8¶Ø†ÆĞ/
+V	java:S106™"9Replace this use of System.out or System.err by a logger.(Î›Ù8¶Ø†ÆĞ/
+[	java:S106¦"9Replace this use of System.out or System.err by a logger.(œÌû˜ùÿÿÿÿ8¶Ø†ÆĞ/
+V	java:S106©"9Replace this use of System.out or System.err by a logger.(Î›Ù8¶Ø†ÆĞ/
+r
+java:S1192q"PDefine a constant instead of duplicating this literal "%4d %02d %02d  " 3 times.(Ğ­öÂûÿÿÿÿ8¶Ø†ÆĞ/
+”
+java:S1192|"wDefine a constant instead of duplicating this literal "======================================================" 3 times.(Úñªâ8¶Ø†ÆĞ/
+s
+java:S1192‰"\Define a constant instead of duplicating this literal "===========================" 3 times.(²İ¨¦
+l
+java:S1192{"JDefine a constant instead of duplicating this literal "ì†ìµ : " 3 times.(üØ¾Êøÿÿÿÿ8¶Ø†ÆĞ/
+q
+java:S1192ˆ"ZDefine a constant instead of duplicating this literal "ë°ì´í„° ì‚­ì œ ì™„ë£Œ!!" 3 times.(ÈÉ‘ô
+¥
+java:S1192t"‚Define a constant instead of duplicating this literal " ì ìš” : %8s  ìˆ˜ì… : %8d  ì§€ì¶œ : %8d    ì†Œë¹„ ìœ í˜• : %3s
+" 3 times.(¢¦Ø•úÿÿÿÿ8¶Ø†ÆĞ/
+|
+java:S1319"fThe type of "UserID" should be an interface such as "List" rather than the implementation "ArrayList".(¦­úÛ
+
+java:S1319"lThe type of "UserPassword" should be an interface such as "List" rather than the implementation "ArrayList".(ÊšÇ7
+e	java:S117d"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êå»
+f	java:S117e"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÎœ½
+e	java:S117f"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾°-
+m	java:S117‚"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êå»8¶Ø†ÆĞ/
+n	java:S117ƒ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÎœ½8¶Ø†ÆĞ/
+n	java:S117„"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò¾¢®8¶Ø†ÆĞ/
+l	java:S117½"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êœØÄúÿÿÿÿ
+f	java:S117¾"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äõ¢
+g	java:S117¿"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßÖ„¤
+g	java:S117ò"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙÂÁæ
+g	java:S117ó"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ËàÅè
+l	java:S117ô"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( ¹Í¾úÿÿÿÿ
+g	java:S117Ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óÅ–†
+g	java:S117È"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹éû
+g	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºÁ
+l	java:S117š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®¼Û‡üÿÿÿÿ
+g	java:S117§"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºÁ
+l	java:S117ª"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®¼Û‡üÿÿÿÿ
+h
+java:S1104"RMake UserID a static final constant or non-public and provide accessors if needed.(¦­úÛ
+m
+java:S1104"XMake UserPassword a static final constant or non-public and provide accessors if needed.(ÊšÇ7
+f
+java:S1104"PMake text a static final constant or non-public and provide accessors if needed.(¸ÑİÉ
+f
+java:S1104"PMake type a static final constant or non-public and provide accessors if needed.(†î¸Ì
+o
+java:S1104"TMake arrMoney a static final constant or non-public and provide accessors if needed.(¿Ü‘ıùÿÿÿÿ
+e
+java:S1104"OMake idx a static final constant or non-public and provide accessors if needed.(ÉŒñ¾
+i
+java:S1104"SMake Useridx a static final constant or non-public and provide accessors if needed.(ç«òŠ
+i
+java:S1104"NMake sc a static final constant or non-public and provide accessors if needed.(”Ä²ıÿÿÿÿ
+B
+java:S1444",Make this "public static UserID" field final(¦­úÛ
+G
+java:S1444"2Make this "public static UserPassword" field final(ÊšÇ7
+@
+java:S1444"*Make this "public static text" field final(¸ÑİÉ
+@
+java:S1444"*Make this "public static type" field final(†î¸Ì
+I
+java:S1444".Make this "public static arrMoney" field final(¿Ü‘ıùÿÿÿÿ
+?
+java:S1444")Make this "public static idx" field final(ÉŒñ¾
+C
+java:S1444"-Make this "public static Useridx" field final(ç«òŠ
+C
+java:S1444"(Make this "public static sc" field final(”Ä²ıÿÿÿÿ
+0
+java:S1220""Move this file to a named package.
+b
+java:S2095¡"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(ª‚öR

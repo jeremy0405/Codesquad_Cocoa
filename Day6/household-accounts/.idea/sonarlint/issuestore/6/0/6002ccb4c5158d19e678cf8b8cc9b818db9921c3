@@ -1,0 +1,57 @@
+
+e
+java:S3008	"ORename this field "User" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ê¾çÈ
+h
+java:S3008
+"SRename this field "Password" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š Ù
+8
+java:S2386"Make this member "protected".(¾¹–éûÿÿÿÿ
+3
+java:S2386	"Make this member "protected".(ê¾çÈ
+2
+java:S2386
+"Make this member "protected".(Š Ù
+P
+java:S1118":Add a private constructor to hide the implicit public one.(¼à©µ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(”§üÒúÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ø°¨ÿÿÿÿÿ
+L
+java:S1854 "6Remove this useless assignment to local variable "NP".(ÿñ¸
+L
+java:S1854*"6Remove this useless assignment to local variable "NP".(ÿñ¸
+8
+java:S3626/"Remove this redundant jump.(ûÁİ…8şäŸñÏ/
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ÔåÓµ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(û”¡úûÿÿÿÿ
+U	java:S106$"9Replace this use of System.out or System.err by a logger.(íôåÓ8Óü“ñÏ/
+U	java:S106%"9Replace this use of System.out or System.err by a logger.(Á”ø 8ŞÄŸñÏ/
+Z	java:S106-"9Replace this use of System.out or System.err by a logger.(´Å©õùÿÿÿÿ8ŞÄŸñÏ/
+z
+java:S1319	"dThe type of "User" should be an interface such as "List" rather than the implementation "ArrayList".(ê¾çÈ
+}
+java:S1319
+"hThe type of "Password" should be an interface such as "List" rather than the implementation "ArrayList".(Š Ù
+f	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿñ¸
+f	java:S117*"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿñ¸
+e	java:S1173"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É”ñ	
+f	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Òí” 
+k	java:S117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îçÙùÿÿÿÿ
+k	java:S117;"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(îçÙùÿÿÿÿ
+v
+java:S1104"[Make nameandpassword a static final constant or non-public and provide accessors if needed.(¾¹–éûÿÿÿÿ
+f
+java:S1104	"PMake User a static final constant or non-public and provide accessors if needed.(ê¾çÈ
+i
+java:S1104
+"TMake Password a static final constant or non-public and provide accessors if needed.(Š Ù
+j
+java:S1104"OMake cnt a static final constant or non-public and provide accessors if needed.(öÖàöşÿÿÿÿ
+P
+java:S1444"5Make this "public static nameandpassword" field final(¾¹–éûÿÿÿÿ
+@
+java:S1444	"*Make this "public static User" field final(ê¾çÈ
+C
+java:S1444
+".Make this "public static Password" field final(Š Ù
+D
+java:S1444")Make this "public static cnt" field final(öÖàöşÿÿÿÿ
