@@ -1,0 +1,6 @@
+
+S
+java:S1858"="get" returns a string, there's no need to call "toString()".(¶ÈªÖ
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(›Àó·ûÿÿÿÿ8ÂÐÖÑÎ/
+0
+java:S1220""Move this file to a named package.

@@ -1,0 +1,38 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(σ‚ύ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ΨνΟΘ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ήÒ—όÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ήÒ—όÿÿÿÿ
+4
+java:S2119"Save and re-use this "Random".(ΈΝΧ
+4
+java:S2119+"Save and re-use this "Random".(ΈΝΧ
+h	java:S100;"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(π™ώÿÿÿÿ
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(ªΛΨÿÿÿÿÿ
+N	java:S106E"9Replace this use of System.out or System.err by a logger.(φης”
+N	java:S106Q"9Replace this use of System.out or System.err by a logger.(φης”
+N	java:S106^"9Replace this use of System.out or System.err by a logger.(φης”
+N	java:S106l"9Replace this use of System.out or System.err by a logger.(φης”
+N	java:S106y"9Replace this use of System.out or System.err by a logger.(φης”
+p	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(σ»σΞύÿÿÿÿ8¬δι›Ρ/
+k	java:S100“"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥¶ƒμ8®δι›Ρ/
+T	java:S106›"9Replace this use of System.out or System.err by a logger.(ήÒ—όÿÿÿÿ
+T	java:S106¦"9Replace this use of System.out or System.err by a logger.(ηων†ύÿÿÿÿ
+O	java:S106«"9Replace this use of System.out or System.err by a logger.(ΓΣΠ
+O	java:S106¬"9Replace this use of System.out or System.err by a logger.(έκΆ
+O	java:S106΄"9Replace this use of System.out or System.err by a logger.(ΗέΩΖ
+[	java:S106µ"9Replace this use of System.out or System.err by a logger.(‹…ε¬όÿÿÿÿ8²δι›Ρ/
+V	java:S106¶"9Replace this use of System.out or System.err by a logger.(όϋΆ¦8²δι›Ρ/
+[	java:S106Ύ"9Replace this use of System.out or System.err by a logger.(ΦΜύÿÿÿÿ8³δι›Ρ/
+V	java:S106Δ"9Replace this use of System.out or System.err by a logger.(ΈάπΆ8³δι›Ρ/
+{
+java:S1192E"eDefine a constant instead of duplicating this literal "μλª»λ κ°’μ„ μ…λ ¥ν–μµλ‹λ‹¤." 5 times.(φης”
+k	java:S117*"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦Σϊζωÿÿÿÿ
+s	java:S117…"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(υ―βαÿÿÿÿÿ8µδι›Ρ/
+n	java:S117‹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ρ±–8µδι›Ρ/
+s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ΨΙµψÿÿÿÿ8µδι›Ρ/
+n	java:S117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥¶ƒμ8µδι›Ρ/
+n	java:S117“"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥¶ƒμ8¶δι›Ρ/
+n	java:S117”"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒΜ™η8¶δι›Ρ/
+A
+java:S5411»"*Use the primitive boolean expression here.(ζΧƒ°
