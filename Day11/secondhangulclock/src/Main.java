@@ -14,9 +14,9 @@ public class Main extends Thread {
 
         while (true) {
             try {
-                Thread t = new Main();
+                Thread t = new Thread(new Main());
                 t.start();
-                Thread.sleep(10000); // 5초마다 갱신.
+                Thread.sleep(10000); // 10초마다 갱신.
                 ClearConsole();
             } catch (Exception e) {
                 System.out.println("메인문 Exception 에러");

@@ -1,0 +1,6 @@
+
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ç¤“Êşÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(­æÎú
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ
+|
+java:S4165w"aRemove this useless assignment; "map" already holds the assigned value along all execution paths.(¼‰ùÿÿÿÿ

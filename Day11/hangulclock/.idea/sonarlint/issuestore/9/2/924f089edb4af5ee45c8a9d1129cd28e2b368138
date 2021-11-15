@@ -1,0 +1,15 @@
+
+P
+java:S1161":Add the "@Override" annotation above this method signature(“–ış
+N	java:S106	"9Replace this use of System.out or System.err by a logger.(µıšì
+t
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(”ı¾
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¶ØÑ
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æªåÅøÿÿÿÿ
+s
+java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(ÔİÓûÿÿÿÿ8ş•—Ò/
+G
+java:S3457"%String contains no format specifiers.(ÔİÓûÿÿÿÿ8ş•—Ò/
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ÔİÓûÿÿÿÿ
+=
+java:S2189""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ
