@@ -112,6 +112,58 @@ public class HangulMap {
     }
 
     private void setHourMap(int hour) {
+        String[][] hourmap;
+        hourmap = this.map;
+        hourmap[2][5] = this.sourcemap[2][5];
+        switch (hour % 12) {
+            case 0:
+                hourmap[2][2] = this.sourcemap[2][2];
+                hourmap[2][4] = this.sourcemap[2][4];
+                break;
+            case 1:
+                hourmap[0][0] = this.sourcemap[0][0];
+                break;
+            case 2:
+                hourmap[0][1] = this.sourcemap[0][1];
+                break;
+            case 3:
+                hourmap[0][2] = this.sourcemap[0][2];
+                break;
+            case 4:
+                hourmap[0][3] = this.sourcemap[0][3];
+                break;
+            case 5:
+                hourmap[0][4] = this.sourcemap[0][4];
+                hourmap[0][5] = this.sourcemap[0][5];
+                break;
+            case 6:
+                hourmap[1][0] = this.sourcemap[1][0];
+                hourmap[1][1] = this.sourcemap[1][1];
+                break;
+            case 7:
+                hourmap[1][2] = this.sourcemap[1][2];
+                hourmap[1][3] = this.sourcemap[1][3];
+                break;
+            case 8:
+                hourmap[1][4] = this.sourcemap[1][4];
+                hourmap[1][5] = this.sourcemap[1][5];
+                break;
+            case 9:
+                hourmap[2][0] = this.sourcemap[2][0];
+                hourmap[2][1] = this.sourcemap[2][1];
+                break;
+            case 10:
+                hourmap[2][2] = this.sourcemap[2][2];
+                break;
+            case 11:
+                hourmap[2][2] = this.sourcemap[2][2];
+                hourmap[2][3] = this.sourcemap[2][3];
+                break;
+            default:
+                break;
+
+        }
+
 
     }
 
