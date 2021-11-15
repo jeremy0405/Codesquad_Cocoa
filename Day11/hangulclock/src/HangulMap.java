@@ -53,6 +53,9 @@ public class HangulMap {
     private void setMinuteMap(int minute) {
         String[][] minutemap;
         minutemap = this.map;
+        if(minute == 0) {
+            return;
+        }
         minutemap[5][5] = this.sourcemap[5][5];
         switch (minute % 10) {
             case 1:
