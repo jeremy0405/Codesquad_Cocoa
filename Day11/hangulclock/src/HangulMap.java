@@ -40,7 +40,7 @@ public class HangulMap {
     }
 
     public void setMap(int hour, int minute) {
-        if (!((hour == 12 || hour == 24) && minute == 00)) {
+        if (!((hour == 12 || hour == 0) && minute == 00)) {
             setHourMap(hour);
             setMinuteMap(minute);
         } else if (hour == 12) {
