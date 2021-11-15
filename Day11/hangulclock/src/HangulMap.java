@@ -21,7 +21,11 @@ public class HangulMap {
     public void printMap(String[][] map) {
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[0].length; j++) {
-                System.out.printf("%3s", map[i][j]);
+                if(map[i][j].equals(" ")) {
+                    System.out.printf("%3s", map[i][j]);
+                } else {
+                    System.out.printf("%2s", map[i][j]);
+                }
             }
             System.out.println("");
         }
@@ -92,6 +96,7 @@ public class HangulMap {
         switch (minute / 10) {
             case 1:
                 minutemap[3][5] = this.sourcemap[3][5];
+                break;
             case 2:
                 minutemap[3][1] = this.sourcemap[3][1];
                 minutemap[3][5] = this.sourcemap[3][5];

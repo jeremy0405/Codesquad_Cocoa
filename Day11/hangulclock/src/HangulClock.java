@@ -15,9 +15,7 @@ public class HangulClock {
         hangulMap.setMap(this.hour, this.minute);
         String[][] map = hangulMap.getMap();
 
-        System.out.print(this.hour + ": ");
-        System.out.println(this.minute);
-        System.out.println("");
+        System.out.printf("%d: %d\n\n", this.hour, this.minute);
 
         hangulMap.printMap(map);
     }

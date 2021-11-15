@@ -16,7 +16,7 @@ public class Main extends Thread {
             try {
                 Thread t = new Main();
                 t.start();
-                Thread.sleep(5000); // 5초마다 갱신.
+                Thread.sleep(10000); // 5초마다 갱신.
                 ClearConsole();
             } catch (Exception e) {
                 System.out.println("메인문 Exception 에러");
@@ -25,16 +25,9 @@ public class Main extends Thread {
     }
 
     private static void ClearConsole() {
-        try {
-            System.out.printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
-            Process p;
-            p = Runtime.getRuntime().exec("cmd /c cls");
-            p.waitFor();
+        System.out.printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
-        } catch (Exception e) {
-            System.out.println(e);
-        }
     }
 
 }
