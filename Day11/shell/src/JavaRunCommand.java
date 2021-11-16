@@ -24,11 +24,7 @@ public class JavaRunCommand {
                 while ((line = reader.readLine()) != null) {
                     System.out.println(line);
                 }
-            } catch (IOException e) {
-                System.out.println("입출력오류");
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                System.out.println("Interrupted 오류");
+            } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
             }
         }
