@@ -1,33 +1,16 @@
-public class Main extends Thread {
-
-    public void run() {
-        try {
-            HangulClock hangulClock;
-            hangulClock = HangulClock.getNewClass();
-            hangulClock.run();
-        } catch (Exception e) {
-            System.out.println("exception e 에러");
-        }
-    }
+public class Main {
 
     public static void main(String[] args) {
 
         while (true) {
             try {
-                Thread t = new Thread(new Main());
-                t.start();
+                HangulClock hangulClock;
+                hangulClock = HangulClock.getNewClass();
+                hangulClock.run();
                 Thread.sleep(10000); // 10초마다 갱신.
-                ClearConsole();
-            } catch (Exception e) {
-                System.out.println("메인문 Exception 에러");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
     }
-
-    private static void ClearConsole() {
-
-        System.out.printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-
-    }
-
 }

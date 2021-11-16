@@ -1,51 +1,4 @@
 
-j	java:S116"URename this field "ANSI_RESET" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»²Ô²
-j	java:S116"URename this field "ANSI_BLACK" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÆÝÁ
-m	java:S116"SRename this field "ANSI_RED" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷õÀ‡ÿÿÿÿÿ
-j	java:S116"URename this field "ANSI_GREEN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïÓáŒ
-p	java:S116"VRename this field "ANSI_YELLOW" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬êªØýÿÿÿÿ
-h	java:S116"TRename this field "ANSI_BLUE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÿ‰`
-k	java:S116	"VRename this field "ANSI_PURPLE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€ù§þ
-n	java:S116
-"TRename this field "ANSI_CYAN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ËÔßúÿÿÿÿ
-o	java:S116"URename this field "ANSI_WHITE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëˆ¬…ùÿÿÿÿ
-u	java:S116"`Rename this field "ANSI_GREEN_BACKGROUND" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ìýü‹
-t	java:S116"`Rename this field "ANSI_WHITE_BACKGROUND" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±¥ø6
-u	java:S116"[Rename this field "BLUE_BOLD_BRIGHT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±ÀØ³ýÿÿÿÿ
-p	java:S116"VRename this field "BLUE_BRIGHT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ú˜ç‘ÿÿÿÿÿ
-7
-java:S1170"!Make this final field static too.(»²Ô²
-7
-java:S1170"!Make this final field static too.(àÆÝÁ
-<
-java:S1170"!Make this final field static too.(÷õÀ‡ÿÿÿÿÿ
-7
-java:S1170"!Make this final field static too.(ïÓáŒ
-<
-java:S1170"!Make this final field static too.(¬êªØýÿÿÿÿ
-6
-java:S1170"!Make this final field static too.(ùÿ‰`
-7
-java:S1170	"!Make this final field static too.(€ù§þ
-<
-java:S1170
-"!Make this final field static too.(†ËÔßúÿÿÿÿ
-<
-java:S1170"!Make this final field static too.(ëˆ¬…ùÿÿÿÿ
-7
-java:S1170"!Make this final field static too.(Ìýü‹
-6
-java:S1170"!Make this final field static too.(±¥ø6
-<
-java:S1170"!Make this final field static too.(±ÀØ³ýÿÿÿÿ
-<
-java:S1170"!Make this final field static too.(ú˜ç‘ÿÿÿÿÿ
-\
-java:S3457+"AFormat specifiers should be used instead of string concatenation.(‘³žýþÿÿÿÿ
-S	java:S106+"9Replace this use of System.out or System.err by a logger.(‘³žýþÿÿÿÿ
-W
-java:S3457-"AFormat specifiers should be used instead of string concatenation.(úÒ»¾
-N	java:S106-"9Replace this use of System.out or System.err by a logger.(úÒ»¾
-S	java:S1060"9Replace this use of System.out or System.err by a logger.(ÞžÒ—üÿÿÿÿ
-}
-java:S4165‰"aRemove this useless assignment; "map" already holds the assigned value along all execution paths.(¼ž‰ùÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(‘³žýþÿÿÿÿ
+N	java:S106 "9Replace this use of System.out or System.err by a logger.(úÒ»¾
+S	java:S106#"9Replace this use of System.out or System.err by a logger.(ÞžÒ—üÿÿÿÿ

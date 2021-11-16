@@ -8,14 +8,15 @@ public class HangulClock {
 
     HangulMap hangulMap = new HangulMap();
 
-    public void run(){
+    public void run() {
         setHour();
         setMinute();
 
         hangulMap.setMap(this.hour, this.minute);
         String[][] map = hangulMap.getMap();
 
-        System.out.printf("%d: %02d\n\n", this.hour, this.minute);
+        System.out.printf("%n%n%n%n%n%n%n%n%n%n%n%d: %02d%n%n",
+            this.hour, this.minute);
 
         hangulMap.printMap(map);
     }
@@ -28,7 +29,7 @@ public class HangulClock {
         this.minute = now.getMinute();
     }
 
-    public static HangulClock getNewClass(){
+    public static HangulClock getNewClass() {
         return new HangulClock();
     }
 }

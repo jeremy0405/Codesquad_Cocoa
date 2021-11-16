@@ -1,21 +1,8 @@
 public class HangulMap {
 
-    final String ANSI_RESET = "\u001B[0m";
-    final String ANSI_BLACK = "\u001B[30m";
-    final String ANSI_RED = "\u001B[31m";
-    final String ANSI_GREEN = "\u001B[32m";
-    final String ANSI_YELLOW = "\u001B[33m";
-    final String ANSI_BLUE = "\u001B[34m";
-    final String ANSI_PURPLE = "\u001B[35m";
-    final String ANSI_CYAN = "\u001B[36m";
-    final String ANSI_WHITE = "\u001B[37m";
-
-    final String ANSI_GREEN_BACKGROUND = "\u001B[42m";
-    final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
-
-    final String BLUE_BOLD_BRIGHT = "\033[1;94m";  // BLUE
-
-    final String BLUE_BRIGHT = "\033[0;94m";   // BLUE
+    static final String ANSI_RESET = "\u001B[0m";
+    static final String ANSI_WHITE = "\u001B[37m";
+    static final String BLUE_BOLD_BRIGHT = "\033[1;94m";  // BLUE
 
     private String[][] sourcemap = {
         {"한", "두", "세", "네", "다", "섯"},
@@ -53,10 +40,6 @@ public class HangulMap {
         return map;
     }
 
-    public void setMap(String[][] map) {
-        this.map = map;
-    }
-
     public void setMap(int hour, int minute) {
         if (!((hour == 12 || hour == 0) && minute == 0)) {
             setHourMap(hour);
@@ -70,7 +53,6 @@ public class HangulMap {
         }
 
     }
-
 
     private void setMinuteMap(int minute) {
         String[][] minutemap;
@@ -134,7 +116,12 @@ public class HangulMap {
             default:
                 break;
         }
-        this.map = minutemap;
+//        this.map = minutemap; // 솔라린트가 없애라고 함. 없어도 작동함. Why?
+
+        // minutemap = this.map; 선언을 초기에 해줌
+        // 따라서 map의 참조변수 주소값이 minutemap의 참조변수 주소값과 같아짐
+        // 따라서 minutemap이 가르키는 객체가 map 자체임
+        // 따라서 minutemap을 변경하면 map 자체가 변경되는 것.
     }
 
     private void setHourMap(int hour) {
