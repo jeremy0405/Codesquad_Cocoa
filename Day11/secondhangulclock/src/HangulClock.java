@@ -29,7 +29,4 @@ public class HangulClock {
         this.minute = now.getMinute();
     }
 
-    public static HangulClock getNewClass() {
-        return new HangulClock();
-    }
 }
