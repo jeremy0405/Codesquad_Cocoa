@@ -2,7 +2,7 @@ import static java.lang.Thread.sleep;
 
 import java.util.Scanner;
 
-public class Interrupted implements Runnable {
+public class Menu implements Runnable {
 
     public void run() {
         try {
@@ -17,14 +17,7 @@ public class Interrupted implements Runnable {
 
     }
 
-    public static void main(String[] args) {
-        boolean isWork = true;
-        while (isWork) {
-            isWork = systemRun();
-        }
-    }
-
-    private static boolean systemRun() {
+    public static boolean systemRun() {
         Scanner sc = new Scanner(System.in);
         System.out.print("clock or cal >> ");
         String command = sc.nextLine();
@@ -33,8 +26,8 @@ public class Interrupted implements Runnable {
 
     private static boolean choiceOption(String command) {
         if (command.equals("clock")) {
-            Interrupted t = new Interrupted();
-            Thread thread = new Thread(t);
+            Menu menu = new Menu();
+            Thread thread = new Thread(menu);
             thread.start();
             Scanner sc = new Scanner(System.in);
             while (true) {
