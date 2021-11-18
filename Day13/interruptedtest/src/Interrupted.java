@@ -9,10 +9,10 @@ public class Interrupted implements Runnable {
             while (true) {
                 HangulClock hangulClock = new HangulClock();
                 hangulClock.clockRun();
-                sleep(10000); // 10초마다 갱신.
+                sleep(5000); // 10초마다 갱신.
             }
         } catch (Exception e) {
-            //TODO 메뉴로 이동
+            System.out.println("시계 종료");
         }
 
     }
