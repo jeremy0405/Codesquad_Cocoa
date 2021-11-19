@@ -22,7 +22,7 @@ public class CmdMenu {
             case "exit":
                 return false;
             default:
-                cmd.cmd();
+                cmd.cmd(command);
                 return true;
         }
 
