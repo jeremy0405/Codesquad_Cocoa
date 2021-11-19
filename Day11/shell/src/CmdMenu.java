@@ -1,21 +1,28 @@
-public class Cmd {
+import hclock.Mainclock;
+
+public class CmdMenu {
+
+    Cmd cmd = new Cmd();
+    Mainclock clock = new Mainclock();
 
     public boolean run(String command) {
 
-        switch (command) {
+        String[] com = command.split(" +");
+
+        switch (com[0]) {
             case "cd":
-                //todo cd 메소드 호출
+                cmd.cd(com[1]);
                 return true;
             case "pwd":
-                //todo pwd 메소드 호출
+                cmd.pwd();
                 return true;
             case "clock":
-                //todo 시계 호출
+                clock.clockRun();
                 return true;
             case "exit":
                 return false;
             default:
-                //todo cmd 호출
+                cmd.cmd();
                 return true;
         }
 
