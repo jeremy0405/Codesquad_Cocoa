@@ -41,6 +41,7 @@ public class Cmd {
             commandlist.addAll(Arrays.asList(comArr));
             processBuilder.command(commandlist);
             Process p = processBuilder.start();
+
             BufferedReader br = new BufferedReader(new InputStreamReader(p.getInputStream()));
             p.waitFor();
 
