@@ -26,13 +26,14 @@ public class DrawFrame extends Frame {
     private int x2;
     private int y2;
 
-    private boolean isBlack = false;
+    private boolean isBlack = true;
     private boolean isRed = false;
     private boolean isBlue = false;
-    private boolean isLine = false;
+    private boolean isLine = true;
     private boolean isRect = false;
     private boolean isCir = false;
     private boolean isCuv = false;
+    private boolean isEraser = false;
 
     public DrawFrame(String title) {
         super(title);
@@ -70,29 +71,41 @@ public class DrawFrame extends Frame {
         if (isCir) {
             g.drawOval(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x1 - x2), Math.abs(y1 - y2));
         }
+        if (isCuv) {
+
+        }
+        if (isEraser) {
+            g.clearRect(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x1 - x2), Math.abs(y1 - y2));
+        }
+
 
     }
 
+    public void update(Graphics g) {
+        paint(g);
+    }
 
     private void setCheckbox() {
 
         Panel figure = new Panel();
         figure.setBackground(Color.lightGray);
         CheckboxGroup figuregroup = new CheckboxGroup();
-        Checkbox line = new Checkbox("직선", figuregroup, false);
+        Checkbox line = new Checkbox("직선", figuregroup, true);
         Checkbox rec = new Checkbox("사각형", figuregroup, false);
         Checkbox cir = new Checkbox("원", figuregroup, false);
         Checkbox cuv = new Checkbox("곡선", figuregroup, false);
+        Checkbox eraswer = new Checkbox("지우개", figuregroup, false);
 
         line.addItemListener(new FigureHandler());
         rec.addItemListener(new FigureHandler());
         cir.addItemListener(new FigureHandler());
         cuv.addItemListener(new FigureHandler());
+        eraswer.addItemListener(new FigureHandler());
 
         Panel color = new Panel();
         color.setBackground(Color.lightGray);
         CheckboxGroup colorgroup = new CheckboxGroup();
-        Checkbox black = new Checkbox("검은색", colorgroup, false);
+        Checkbox black = new Checkbox("검은색", colorgroup, true);
         Checkbox red = new Checkbox("빨간색", colorgroup, false);
         Checkbox blue = new Checkbox("파란색", colorgroup, false);
 
@@ -104,6 +117,7 @@ public class DrawFrame extends Frame {
         figure.add(rec);
         figure.add(cir);
         figure.add(cuv);
+        figure.add(eraswer);
 
         color.add(black);
         color.add(red);
@@ -149,6 +163,7 @@ public class DrawFrame extends Frame {
                 isRect = false;
                 isCir = false;
                 isCuv = false;
+                isEraser = false;
                 System.out.println(e.getItem());
             }
             if (e.getItem().equals("사각형")) {
@@ -156,20 +171,29 @@ public class DrawFrame extends Frame {
                 isRect = true;
                 isCir = false;
                 isCuv = false;
+                isEraser = false;
             }
             if (e.getItem().equals("원")) {
                 isLine = false;
                 isRect = false;
                 isCir = true;
                 isCuv = false;
+                isEraser = false;
             }
             if (e.getItem().equals("곡선")) {
                 isLine = false;
                 isRect = false;
                 isCir = false;
                 isCuv = true;
+                isEraser = false;
             }
-
+            if (e.getItem().equals("지우개")) {
+                isLine = false;
+                isRect = false;
+                isCir = false;
+                isCuv = false;
+                isEraser = true;
+            }
         }
     }
 
