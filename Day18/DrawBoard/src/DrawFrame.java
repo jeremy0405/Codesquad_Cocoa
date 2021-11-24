@@ -54,33 +54,41 @@ public class DrawFrame extends Frame {
         setVisible(true);
     }
 
-    @Override
-    public void paint(Graphics g) {
+    public void paintComponent(Graphics g) {
+        super.paintComponents(g);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(new BasicStroke(3));
+
         if (isBlack) {
-            g.setColor(Color.black);
+            g2.setColor(Color.black);
         }
         if (isRed) {
-            g.setColor(Color.red);
+            g2.setColor(Color.red);
         }
         if (isBlue) {
-            g.setColor(Color.blue);
+            g2.setColor(Color.blue);
         }
 
         if (isLine) {
-            g.drawLine(x1, y1, x2, y2);
+            g2.drawLine(x1, y1, x2, y2);
         }
         if (isRect) {
-            g.drawRect(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x1 - x2), Math.abs(y1 - y2));
+            g2.drawRect(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x1 - x2), Math.abs(y1 - y2));
         }
         if (isCir) {
-            g.drawOval(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x1 - x2), Math.abs(y1 - y2));
+            g2.drawOval(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x1 - x2), Math.abs(y1 - y2));
         }
         if (isCuv) {
-            g.fillOval(dx1 - 5, dy1 - 5, 10, 10);
+            g2.fillOval(dx1 - 5, dy1 - 5, 10, 10);
         }
         if (isEraser) {
-            g.clearRect(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x1 - x2), Math.abs(y1 - y2));
+            g2.clearRect(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x1 - x2), Math.abs(y1 - y2));
         }
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        paintComponent(g);
     }
 
     @Override
