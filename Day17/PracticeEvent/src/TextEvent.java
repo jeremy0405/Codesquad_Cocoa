@@ -65,7 +65,6 @@ public class TextEvent {
             }
         });
 
-
         textArea.add(ta);
         textField.add(tf);
 
