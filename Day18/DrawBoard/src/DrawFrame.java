@@ -1,75 +1,194 @@
+import java.awt.Button;
+import java.awt.Checkbox;
+import java.awt.CheckboxGroup;
+import java.awt.CheckboxMenuItem;
+import java.awt.Color;
 import java.awt.Frame;
+import java.awt.Graphics;
 import java.awt.Menu;
 import java.awt.MenuBar;
 import java.awt.MenuItem;
+import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.swing.ButtonGroup;
 
 public class DrawFrame extends Frame {
 
+    private int x1;
+    private int y1;
+    private int x2;
+    private int y2;
+
+    private boolean isBlack = false;
+    private boolean isRed = false;
+    private boolean isBlue = false;
+    private boolean isLine = false;
+    private boolean isRect = false;
+    private boolean isCir = false;
+    private boolean isCuv = false;
+
     public DrawFrame(String title) {
         super(title);
-        setBounds(250,100,1200,800);
+        setBounds(250, 100, 1200, 800);
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 dispose();
             }
         });
-        setMenuBar();
-
+        setCheckbox();
+        addMouseListener(new MouseGetter());
 
         setVisible(true);
     }
 
-    private void setMenuBar() {
-        MenuBar mb = new MenuBar();
-        Menu line = new Menu("직선");
-        Menu rec = new Menu("사각형");
-        Menu cir = new Menu("원");
-        Menu cuv = new Menu("곡선");
-        line.addActionListener(new FigureHandler());
+    public void paint(Graphics g) {
 
-        setMenuItem(line);
-        setMenuItem(rec);
-        setMenuItem(cir);
-        setMenuItem(cuv);
+        if (isBlack) {
+            g.setColor(Color.black);
+        }
+        if (isRed) {
+            g.setColor(Color.red);
+        }
+        if (isBlue) {
+            g.setColor(Color.blue);
+        }
 
-        mb.add(line);
-        mb.add(rec);
-        mb.add(cir);
-        mb.add(cuv);
+        if (isLine) {
+            g.drawLine(x1, y1, x2, y2);
+        }
+        if (isRect) {
+            g.drawRect(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x1 - x2), Math.abs(y1 - y2));
+        }
+        if (isCir) {
+            g.drawOval(Math.min(x1, x2), Math.min(y1, y2), Math.abs(x1 - x2), Math.abs(y1 - y2));
+        }
 
-        setMenuBar(mb);
     }
 
-    private void setMenuItem(Menu menu) {
-        MenuItem black = new MenuItem("검은색");
-        MenuItem red = new MenuItem("빨간색");
-        MenuItem blue = new MenuItem("파란색");
-        black.addActionListener(new ColorHandler());
-        red.addActionListener(new ColorHandler());
-        blue.addActionListener(new ColorHandler());
-        menu.add(black);
-        menu.add(red);
-        menu.add(blue);
+
+    private void setCheckbox() {
+
+        Panel figure = new Panel();
+        figure.setBackground(Color.lightGray);
+        CheckboxGroup figuregroup = new CheckboxGroup();
+        Checkbox line = new Checkbox("직선", figuregroup, false);
+        Checkbox rec = new Checkbox("사각형", figuregroup, false);
+        Checkbox cir = new Checkbox("원", figuregroup, false);
+        Checkbox cuv = new Checkbox("곡선", figuregroup, false);
+
+        line.addItemListener(new FigureHandler());
+        rec.addItemListener(new FigureHandler());
+        cir.addItemListener(new FigureHandler());
+        cuv.addItemListener(new FigureHandler());
+
+        Panel color = new Panel();
+        color.setBackground(Color.lightGray);
+        CheckboxGroup colorgroup = new CheckboxGroup();
+        Checkbox black = new Checkbox("검은색", colorgroup, false);
+        Checkbox red = new Checkbox("빨간색", colorgroup, false);
+        Checkbox blue = new Checkbox("파란색", colorgroup, false);
+
+        black.addItemListener(new ColorHandler());
+        red.addItemListener(new ColorHandler());
+        blue.addItemListener(new ColorHandler());
+
+        figure.add(line);
+        figure.add(rec);
+        figure.add(cir);
+        figure.add(cuv);
+
+        color.add(black);
+        color.add(red);
+        color.add(blue);
+
+        add(figure, "North");
+        add(color, "South");
+
     }
 
-    class ColorHandler implements ActionListener {
+    private class ColorHandler implements ItemListener {
+
         @Override
-        public void actionPerformed(ActionEvent e) {
-            //TODO 색 지정 해주는 기능을 추가해야함.
-            System.out.println(e.getActionCommand());
+        public void itemStateChanged(ItemEvent e) {
+            //TODO 색깔 지정 해주는 기능 추가해야함.
+            if (e.getItem().equals("검은색")) {
+                isBlack = true;
+                isRed = false;
+                isBlue = false;
+                System.out.println(e.getItem());
+            }
+            if (e.getItem().equals("빨간색")) {
+                isBlack = false;
+                isRed = true;
+                isBlue = false;
+            }
+            if (e.getItem().equals("파란색")) {
+                isBlack = false;
+                isRed = false;
+                isBlue = true;
+            }
         }
     }
 
-    private class FigureHandler implements ActionListener {
+    private class FigureHandler implements ItemListener {
+
         @Override
-        public void actionPerformed(ActionEvent e) {
+        public void itemStateChanged(ItemEvent e) {
+
             //TODO 도형 지정 해주는 기능 추가해야함.
-            System.out.println(e.getActionCommand());
+            if (e.getItem().equals("직선")) {
+                isLine = true;
+                isRect = false;
+                isCir = false;
+                isCuv = false;
+                System.out.println(e.getItem());
+            }
+            if (e.getItem().equals("사각형")) {
+                isLine = false;
+                isRect = true;
+                isCir = false;
+                isCuv = false;
+            }
+            if (e.getItem().equals("원")) {
+                isLine = false;
+                isRect = false;
+                isCir = true;
+                isCuv = false;
+            }
+            if (e.getItem().equals("곡선")) {
+                isLine = false;
+                isRect = false;
+                isCir = false;
+                isCuv = true;
+            }
+
+        }
+    }
+
+    private class MouseGetter extends MouseAdapter {
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            x1 = e.getX();
+            y1 = e.getY();
+        }
+
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            x2 = e.getX();
+            y2 = e.getY();
+
+            repaint();
+
+            System.out.printf("%5d%5d%5d%5d\n", x1, y1, x2, y2);
         }
     }
 }
