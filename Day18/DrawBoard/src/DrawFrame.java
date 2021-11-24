@@ -1,11 +1,17 @@
 import java.awt.BasicStroke;
+import java.awt.Button;
 import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
 import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.GridLayout;
+import java.awt.Label;
 import java.awt.Panel;
+import java.awt.Scrollbar;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
@@ -28,6 +34,7 @@ public class DrawFrame extends Frame {
     private boolean isCir = false;
     private boolean isCuv = false;
     private boolean isEraser = false;
+    private int lwidth = 3;
 
     public DrawFrame(String title) {
         super(title);
@@ -50,14 +57,13 @@ public class DrawFrame extends Frame {
                 }
             }
         });
-
         setVisible(true);
     }
 
     public void paintComponent(Graphics g) {
         super.paintComponents(g);
         Graphics2D g2 = (Graphics2D) g;
-        g2.setStroke(new BasicStroke(3));
+        g2.setStroke(new BasicStroke(lwidth));
 
         if (isBlack) {
             g2.setColor(Color.black);
@@ -106,12 +112,36 @@ public class DrawFrame extends Frame {
         Checkbox cir = new Checkbox("원", figuregroup, false);
         Checkbox cuv = new Checkbox("곡선", figuregroup, false);
         Checkbox eraser = new Checkbox("지우개", figuregroup, false);
+        Button plus = new Button("굵기+");
+        Button minus = new Button("굵기-");
+        Label a = new Label("굵기 : 3");
 
         line.addItemListener(new FigureHandler());
         rec.addItemListener(new FigureHandler());
         cir.addItemListener(new FigureHandler());
         cuv.addItemListener(new FigureHandler());
         eraser.addItemListener(new FigureHandler());
+        plus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(lwidth >= 10) {
+                    return;
+                }
+                lwidth++;
+                a.setText("굵기 : " + lwidth);
+            }
+        });
+        minus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (lwidth <= 1) {
+                    return;
+                }
+                lwidth--;
+                a.setText("굵기 : " + lwidth);
+            }
+        });
+
 
         Panel color = new Panel();
         color.setBackground(Color.lightGray);
@@ -129,6 +159,9 @@ public class DrawFrame extends Frame {
         figure.add(cir);
         figure.add(cuv);
         figure.add(eraser);
+        figure.add(plus);
+        figure.add(minus);
+        figure.add(a);
 
         color.add(black);
         color.add(red);
