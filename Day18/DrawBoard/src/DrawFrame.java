@@ -22,8 +22,8 @@ public class DrawFrame extends Frame {
     private int y1;
     private int x2;
     private int y2;
-    private static int dx1;
-    private static int dy1;
+    private int dx1;
+    private int dy1;
     private boolean isBlack = true;
     private boolean isRed = false;
     private boolean isBlue = false;
