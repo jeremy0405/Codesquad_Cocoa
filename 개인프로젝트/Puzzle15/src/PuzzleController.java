@@ -25,7 +25,10 @@ public class PuzzleController {
     public void init() {
         System.out.println("15퍼즐 게임을 시작합니다");
         System.out.println("w a s d 를 눌러 15퍼즐을 완성하세요!");
-        //TODO 랜덤으로 섞기 해야함.
+        suffle();
+    }
+
+    private void suffle() {
         Random ran = new Random();
         int suffleNum = 300;
         for (int i = 0; i < suffleNum; i++) {
@@ -67,6 +70,8 @@ public class PuzzleController {
             }
 
         }
+
+        userInput.close();
 
     }
 
