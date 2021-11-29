@@ -28,6 +28,27 @@ public class PuzzleController {
         suffle();
     }
 
+    public void run() {
+
+        printPuzzle.print(answer);
+
+        while (true) {
+            String ui = userInput.input();
+            move(ui);
+            if (ui.equals("q")) {
+                System.out.println("게임을 종료합니다.");
+                break;
+            }
+
+            printPuzzle.print(answer);
+            if (Arrays.deepEquals(answer, solution)) {
+                System.out.println("축하합니다! 퍼즐을 완성했습니다");
+                break;
+            }
+
+        }
+        userInput.close();
+    }
     private void suffle() {
         Random ran = new Random();
         int suffleNum = 300;
@@ -49,30 +70,6 @@ public class PuzzleController {
             default:
                 return "q";
         }
-    }
-
-    public void run() {
-
-        printPuzzle.print(answer);
-
-        while (true) {
-            String ui = userInput.input();
-            move(ui);
-            if (ui.equals("q")) {
-                System.out.println("게임을 종료합니다.");
-                break;
-            }
-
-            printPuzzle.print(answer);
-            if (Arrays.deepEquals(answer, solution)) {
-                System.out.println("축하합니다! 퍼즐을 완성했습니다");
-                break;
-            }
-
-        }
-
-        userInput.close();
-
     }
 
     public void move(String input) {
