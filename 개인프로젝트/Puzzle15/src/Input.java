@@ -9,7 +9,8 @@ public class Input {
         String input = sc.nextLine();
         input = input.toLowerCase();
 
-        if (!input.equals("w") && !input.equals("a") && !input.equals("s") && !input.equals("d")) {
+        if (!input.equals("w") && !input.equals("a") && !input.equals("s")
+            && !input.equals("d") && !input.equals("q")) {
             System.out.println("잘못된 값을 입력했습니다. w a s d 중에 하나를 입력해주세요.");
             input = input();
         }
