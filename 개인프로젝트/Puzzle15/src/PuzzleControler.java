@@ -27,9 +27,9 @@ public class PuzzleControler {
         System.out.println("w a s d 를 눌러 15퍼즐을 완성하세요!");
         //TODO 랜덤으로 섞기 해야함.
         Random ran = new Random();
-        int suffleNum = 30;
+        int suffleNum = 300;
         for (int i = 0; i < suffleNum; i++) {
-            move(matchNum(ran.nextInt(5)));
+            move(matchNum(ran.nextInt(4)));
         }
     }
 
@@ -40,9 +40,8 @@ public class PuzzleControler {
             case 1:
                 return "a";
             case 2:
-            case 3:
                 return "s";
-            case 4:
+            case 3:
                 return "d";
             default:
                 return "q";
