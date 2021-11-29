@@ -5,6 +5,7 @@ public class PuzzleMain {
         PuzzleController puzzleController = new PuzzleController();
         puzzleController.init();
         puzzleController.run();
+
     }
 
 }
