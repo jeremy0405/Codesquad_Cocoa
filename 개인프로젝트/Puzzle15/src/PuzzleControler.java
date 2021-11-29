@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class PuzzleControler {
 
     private static final String[][] solution = {
@@ -6,7 +8,12 @@ public class PuzzleControler {
         {"9", "10", "11", "12"},
         {"13", "14", "15", ""}
     };
-    private String[][] answer = solution;
+    private String[][] answer = {
+        {"1", "2", "3", "4"},
+        {"5", "6", "7", "8"},
+        {"9", "10", "11", "12"},
+        {"13", "14", "15", ""}
+    };
 
     // 빈칸 위치 x, y 좌표 가지고 있는 클래스
     private Position position = new Position();
@@ -24,10 +31,23 @@ public class PuzzleControler {
         // 사용자 입력에 따른 move 들어있어야 함
         // move 후에 항상 print 있어야 함
 
-        System.out.println(UserInput.input());
-        printPuzzle.print(answer);
+        while(true) {
+            String ui = UserInput.input();
+            move(ui);
+            printPuzzle.print(answer);
 
-        move(UserInput.input());
+
+
+            if(Arrays.deepEquals(answer, solution)){
+                System.out.println("축하합니다! 퍼즐을 완성했습니다");
+                break;
+            }
+
+            if(ui.equals("q")){
+                break;
+            }
+        }
+
     }
 
     public void move(String input) {
@@ -50,14 +70,37 @@ public class PuzzleControler {
     }
 
     private void movedown() {
+        // 빈칸이 아래로
+        int x = position.getX();
+        int y = position.getY();
+        this.answer[x][y] = this.answer[x + 1][y];
+        this.answer[x + 1][y] = "";
+        position.setX(x + 1);
     }
-    private void moveright(){
 
+    private void moveright() {
+        // 빈칸이 오른쪽으로
+        int x = position.getX();
+        int y = position.getY();
+        this.answer[x][y] = this.answer[x][y + 1];
+        this.answer[x][y + 1] = "";
+        position.setY(y + 1);
     }
-    private void moveup(){
 
+    private void moveup() {
+        int x = position.getX();
+        int y = position.getY();
+        this.answer[x][y] = this.answer[x - 1][y];
+        this.answer[x - 1][y] = "";
+        position.setX(x - 1);
     }
-    private void moveleft(){
+
+    private void moveleft() {
+        int x = position.getX();
+        int y = position.getY();
+        this.answer[x][y] = this.answer[x][y - 1];
+        this.answer[x][y - 1] = "";
+        position.setY(y - 1);
 
     }
 
