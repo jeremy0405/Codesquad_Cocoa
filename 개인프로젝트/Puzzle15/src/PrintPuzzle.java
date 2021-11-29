@@ -14,6 +14,7 @@ public class PrintPuzzle {
         }
 
         System.out.println(sb.toString());
+        sb.setLength(0);
     }
 
 }
