@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Random;
 
-public class PuzzleControler {
+public class PuzzleController {
 
     private static final String[][] solution = {
         {"1", "2", "3", "4"},
