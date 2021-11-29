@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class PuzzleControler {
 
@@ -23,26 +24,47 @@ public class PuzzleControler {
 
     public void init() {
         System.out.println("15퍼즐 게임을 시작합니다");
+        System.out.println("w a s d 를 눌러 15퍼즐을 완성하세요!");
         //TODO 랜덤으로 섞기 해야함.
+        Random ran = new Random();
+        int suffleNum = 30;
+        for (int i = 0; i < suffleNum; i++) {
+            move(matchNum(ran.nextInt(5)));
+        }
+    }
+
+    private String matchNum(int num) {
+        switch (num) {
+            case 0:
+                return "w";
+            case 1:
+                return "a";
+            case 2:
+            case 3:
+                return "s";
+            case 4:
+                return "d";
+            default:
+                return "q";
+        }
     }
 
     public void run() {
 
         printPuzzle.print(answer);
 
-        boolean keepWork = true;
-        while (keepWork) {
+        while (true) {
             String ui = userInput.input();
             move(ui);
             if (ui.equals("q")) {
                 System.out.println("게임을 종료합니다.");
-                keepWork = false;
+                break;
             }
 
             printPuzzle.print(answer);
             if (Arrays.deepEquals(answer, solution)) {
                 System.out.println("축하합니다! 퍼즐을 완성했습니다");
-                keepWork = false;
+                break;
             }
 
         }
@@ -75,7 +97,6 @@ public class PuzzleControler {
         int x = position.getX();
         int y = position.getY();
         if (x >= 3){
-            System.out.println("입력한 방향으로 이동이 불가합니다.");
             return;
         }
         this.answer[x][y] = this.answer[x + 1][y];
@@ -88,7 +109,6 @@ public class PuzzleControler {
         int x = position.getX();
         int y = position.getY();
         if (y >= 3){
-            System.out.println("입력한 방향으로 이동이 불가합니다.");
             return;
         }
         this.answer[x][y] = this.answer[x][y + 1];
@@ -100,7 +120,6 @@ public class PuzzleControler {
         int x = position.getX();
         int y = position.getY();
         if (x <= 0){
-            System.out.println("입력한 방향으로 이동이 불가합니다.");
             return;
         }
         this.answer[x][y] = this.answer[x - 1][y];
@@ -112,7 +131,6 @@ public class PuzzleControler {
         int x = position.getX();
         int y = position.getY();
         if (y <= 0){
-            System.out.println("입력한 방향으로 이동이 불가합니다.");
             return;
         }
         this.answer[x][y] = this.answer[x][y - 1];
