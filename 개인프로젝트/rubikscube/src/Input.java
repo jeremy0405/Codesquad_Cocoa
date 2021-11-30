@@ -51,9 +51,9 @@ public class Input {
         if(valInput) {
             return userInput;
         } else {
+            System.out.println("값을 잘못 입력하셨습니다. 다시 입력해주세요");
             return receiveInput();
         }
-
     }
 
     public void close() {
