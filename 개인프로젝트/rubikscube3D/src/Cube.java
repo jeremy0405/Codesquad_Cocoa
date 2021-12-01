@@ -13,6 +13,7 @@ public class Cube {
     };
 
     private int count = 0;
+    private long start;
 
     private String[][] PlaneU = {{"B", "B", "B"}, {"B", "B", "B"}, {"B", "B", "B"}};
     private String[][] PlaneL = {{"W", "W", "W"}, {"W", "W", "W"}, {"W", "W", "W"}};
@@ -26,6 +27,7 @@ public class Cube {
     }
 
     private void init() {
+        start = System.currentTimeMillis();
         suffle();
         // initial timecheck -> 전역변수로 만든 값에 넣어줘야 할듯.
         callPrint();
@@ -172,9 +174,9 @@ public class Cube {
 
     private void dipose() {
         System.out.println("프로그램을 종료합니다.");
-        //todo 경과시간 체크
-        System.out.println("경과 시간 : ");
-        System.out.println("입력한 횟수 :" + count);
+        long time = System.currentTimeMillis() - start;
+        System.out.println("경과 시간(s) : " + time / 1000 + "sec");
+        System.out.println("입력한 횟수 :" + count + "회");
         System.exit(0);
     }
 
