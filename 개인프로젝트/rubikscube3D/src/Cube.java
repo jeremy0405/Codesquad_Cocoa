@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Random;
 
 public class Cube {
 
@@ -24,8 +25,37 @@ public class Cube {
 
     private void init() {
         //todo suffle();
+        suffle();
         // initial timecheck -> 전역변수로 만든 값에 넣어줘야 할듯.
         callPrint();
+    }
+
+    private void suffle() {
+        Random ran = new Random();
+        int suffleNum = 50;
+        for (int i = 0; i < suffleNum; i++) {
+            int random = ran.nextInt(6);
+            switch (random) {
+                case 0:
+                    turnCube("U");
+                    break;
+                case 1:
+                    turnCube("L");
+                    break;
+                case 2:
+                    turnCube("F");
+                    break;
+                case 3:
+                    turnCube("R");
+                    break;
+                case 4:
+                    turnCube("B");
+                    break;
+                case 5:
+                    turnCube("D");
+                    break;
+            }
+        }
     }
 
     public void run() {
