@@ -34,16 +34,16 @@ public class Cube {
         //todo 아래 구문을 무한반복
         // 정답과 일치하는지 비교하는 메서드 추가해야함.
         // 프린트하는 거 추가해야함.
-//        boolean isRun = true;
-//        while (isRun) {
+        boolean isRun = true;
+        while (isRun) {
             String[] commands = input.userInput();
             for (String command : commands) {
                 System.out.println(command);
                 turnCube(command);
                 callPrint();
-//                // todo 횟수 카운트하는 int 여기서 증가
-//                isRun = checkAnswer();
-//            }
+                // todo 횟수 카운트하는 int 여기서 증가
+                isRun = checkAnswer();
+            }
         }
     }
 
