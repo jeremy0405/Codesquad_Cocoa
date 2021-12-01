@@ -21,7 +21,17 @@ public class Cube {
 
     private void init() {
         //todo suffle();
-        // initial timecheck
+        // initial timecheck -> 전역변수로 만든 값에 넣어줘야 할듯.
+        // 셔플 된 큐브 출력
+    }
+
+    public void run() {
+        Input input = new Input();
+        String[] command = input.userInput();
+        for (var a: command
+        ) {
+            System.out.println(a);
+        }
     }
 
 
