@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Cube {
 
     private static final String[][][] Answer = {
@@ -32,15 +34,23 @@ public class Cube {
         //todo 아래 구문을 무한반복
         // 정답과 일치하는지 비교하는 메서드 추가해야함.
         // 프린트하는 거 추가해야함.
-        String[] commands = input.userInput();
-        for (String command : commands) {
-            System.out.println(command);
-            turnCube(command);
-            callPrint();
-            // todo 횟수 카운트하는 int 여기서 증가
+//        boolean isRun = true;
+//        while (isRun) {
+            String[] commands = input.userInput();
+            for (String command : commands) {
+                System.out.println(command);
+                turnCube(command);
+                callPrint();
+//                // todo 횟수 카운트하는 int 여기서 증가
+//                isRun = checkAnswer();
+//            }
         }
+    }
 
-
+    private boolean checkAnswer() {
+        return !(Arrays.deepEquals(PlaneU, Answer[0]) && Arrays.deepEquals(PlaneL, Answer[1])
+            && Arrays.deepEquals(PlaneF, Answer[2]) && Arrays.deepEquals(PlaneR, Answer[3])
+            && Arrays.deepEquals(PlaneB, Answer[4]) && Arrays.deepEquals(PlaneD, Answer[5]));
     }
 
     private void callPrint() {
@@ -62,11 +72,16 @@ public class Cube {
                 turnU();
                 break;
             case "L":
-                PlaneL = clockwiseTurn(PlaneL);
+                turnL();
                 break;
             case "L2":
+                turnL();
+                turnL();
                 break;
             case "L'":
+                turnL();
+                turnL();
+                turnL();
                 break;
             case "F":
                 turnF();
@@ -81,11 +96,16 @@ public class Cube {
                 turnF();
                 break;
             case "R":
-                PlaneR = clockwiseTurn(PlaneR);
+                turnR();
                 break;
             case "R2":
+                turnR();
+                turnR();
                 break;
             case "R'":
+                turnR();
+                turnR();
+                turnR();
                 break;
             case "B":
                 turnB();
@@ -115,6 +135,16 @@ public class Cube {
                 dipose();
                 break;
         }
+    }
+
+    private void turnR() {
+        PlaneR = clockwiseTurn(PlaneR);
+        turnAroundR();
+    }
+
+    private void turnL() {
+        PlaneL = clockwiseTurn(PlaneL);
+        turnAroundL();
     }
 
     private void turnB() {
@@ -201,10 +231,10 @@ public class Cube {
         PlaneL = clockwiseTurn(PlaneL);
         String[] tmp = new String[3];
         System.arraycopy(PlaneD[2], 0, tmp, 0, 3);
-        System.arraycopy(PlaneR[2], 0, PlaneD[2], 0, 3);
-        System.arraycopy(PlaneU[2], 0, PlaneR[2], 0, 3);
-        System.arraycopy(PlaneL[2], 0, PlaneU[2], 0, 3);
-        System.arraycopy(tmp, 0, PlaneL[2], 0, 3);
+        System.arraycopy(PlaneL[2], 0, PlaneD[2], 0, 3);
+        System.arraycopy(PlaneU[2], 0, PlaneL[2], 0, 3);
+        System.arraycopy(PlaneR[2], 0, PlaneU[2], 0, 3);
+        System.arraycopy(tmp, 0, PlaneR[2], 0, 3);
         PlaneL = clockwiseTurn(PlaneL);
         PlaneU = clockwiseTurn(PlaneU);
         PlaneU = clockwiseTurn(PlaneU);
@@ -214,11 +244,53 @@ public class Cube {
     }
 
     private void turnAroundL() {
-
+        PlaneU = clockwiseTurn(PlaneU);
+        PlaneU = clockwiseTurn(PlaneU);
+        PlaneU = clockwiseTurn(PlaneU);
+        PlaneF = clockwiseTurn(PlaneF);
+        PlaneF = clockwiseTurn(PlaneF);
+        PlaneF = clockwiseTurn(PlaneF);
+        PlaneD = clockwiseTurn(PlaneD);
+        PlaneD = clockwiseTurn(PlaneD);
+        PlaneD = clockwiseTurn(PlaneD);
+        PlaneB = clockwiseTurn(PlaneB);
+        String[] tmp = new String[3];
+        System.arraycopy(PlaneU[2], 0, tmp, 0, 3);
+        System.arraycopy(PlaneB[2], 0, PlaneU[2], 0, 3);
+        System.arraycopy(PlaneD[2], 0, PlaneB[2], 0, 3);
+        System.arraycopy(PlaneF[2], 0, PlaneD[2], 0, 3);
+        System.arraycopy(tmp, 0, PlaneF[2], 0, 3);
+        PlaneU = clockwiseTurn(PlaneU);
+        PlaneF = clockwiseTurn(PlaneF);
+        PlaneD = clockwiseTurn(PlaneD);
+        PlaneB = clockwiseTurn(PlaneB);
+        PlaneB = clockwiseTurn(PlaneB);
+        PlaneB = clockwiseTurn(PlaneB);
     }
 
     private void turnAroundR() {
-
+        PlaneU = clockwiseTurn(PlaneU);
+        PlaneF = clockwiseTurn(PlaneF);
+        PlaneD = clockwiseTurn(PlaneD);
+        PlaneB = clockwiseTurn(PlaneB);
+        PlaneB = clockwiseTurn(PlaneB);
+        PlaneB = clockwiseTurn(PlaneB);
+        String[] tmp = new String[3];
+        System.arraycopy(PlaneU[2], 0, tmp, 0, 3);
+        System.arraycopy(PlaneF[2], 0, PlaneU[2], 0, 3);
+        System.arraycopy(PlaneD[2], 0, PlaneF[2], 0, 3);
+        System.arraycopy(PlaneB[2], 0, PlaneD[2], 0, 3);
+        System.arraycopy(tmp, 0, PlaneB[2], 0, 3);
+        PlaneU = clockwiseTurn(PlaneU);
+        PlaneU = clockwiseTurn(PlaneU);
+        PlaneU = clockwiseTurn(PlaneU);
+        PlaneF = clockwiseTurn(PlaneF);
+        PlaneF = clockwiseTurn(PlaneF);
+        PlaneF = clockwiseTurn(PlaneF);
+        PlaneD = clockwiseTurn(PlaneD);
+        PlaneD = clockwiseTurn(PlaneD);
+        PlaneD = clockwiseTurn(PlaneD);
+        PlaneB = clockwiseTurn(PlaneB);
     }
 
 }
