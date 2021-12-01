@@ -12,6 +12,8 @@ public class Cube {
         {{"R", "R", "R"}, {"R", "R", "R"}, {"R", "R", "R"}}  // D
     };
 
+    private int count = 0;
+
     private String[][] PlaneU = {{"B", "B", "B"}, {"B", "B", "B"}, {"B", "B", "B"}};
     private String[][] PlaneL = {{"W", "W", "W"}, {"W", "W", "W"}, {"W", "W", "W"}};
     private String[][] PlaneF = {{"O", "O", "O"}, {"O", "O", "O"}, {"O", "O", "O"}};
@@ -24,7 +26,6 @@ public class Cube {
     }
 
     private void init() {
-        //todo suffle();
         suffle();
         // initial timecheck -> 전역변수로 만든 값에 넣어줘야 할듯.
         callPrint();
@@ -32,7 +33,7 @@ public class Cube {
 
     private void suffle() {
         Random ran = new Random();
-        int suffleNum = 50;
+        int suffleNum = 100;
         for (int i = 0; i < suffleNum; i++) {
             int random = ran.nextInt(6);
             switch (random) {
@@ -61,9 +62,6 @@ public class Cube {
     public void run() {
         Input input = new Input();
 
-        //todo 아래 구문을 무한반복
-        // 정답과 일치하는지 비교하는 메서드 추가해야함.
-        // 프린트하는 거 추가해야함.
         boolean isRun = true;
         while (isRun) {
             String[] commands = input.userInput();
@@ -71,10 +69,15 @@ public class Cube {
                 System.out.println(command);
                 turnCube(command);
                 callPrint();
-                // todo 횟수 카운트하는 int 여기서 증가
+                count++;
                 isRun = checkAnswer();
+                if(!isRun){
+                    dipose();
+                }
+
             }
         }
+
     }
 
     private boolean checkAnswer() {
@@ -167,6 +170,14 @@ public class Cube {
         }
     }
 
+    private void dipose() {
+        System.out.println("프로그램을 종료합니다.");
+        //todo 경과시간 체크
+        System.out.println("경과 시간 : ");
+        System.out.println("입력한 횟수 :" + count);
+        System.exit(0);
+    }
+
     private void turnR() {
         PlaneR = clockwiseTurn(PlaneR);
         turnAroundR();
@@ -185,12 +196,6 @@ public class Cube {
     private void turnF() {
         PlaneF = clockwiseTurn(PlaneF);
         turnAroundF();
-    }
-
-    private void dipose() {
-        System.out.println("프로그램을 종료합니다.");
-        //todo 횟수, 시간 출력
-        System.exit(0);
     }
 
     private void turnD() {
