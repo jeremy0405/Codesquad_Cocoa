@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Input {
@@ -8,33 +9,33 @@ public class Input {
 
     public String[] userInput() {
         System.out.print("Cube> ");
-        String userinput = sc.nextLine();
+        String userinput = sc.nextLine().toUpperCase();
         String[] splitCommand = splitInput(userinput);
-        String[] command = validateInput(splitCommand);
-        return command;
+        String[] commands = validateInput(splitCommand);
+        return commands;
     }
 
     private String[] validateInput(String[] command) {
         for (int i = 0; i < command.length; i++) {
-            if (!command[i].equalsIgnoreCase("F") &&
-                !command[i].equalsIgnoreCase("F'") &&
-                !command[i].equalsIgnoreCase("F2") &&
-                !command[i].equalsIgnoreCase("R") &&
-                !command[i].equalsIgnoreCase("R'") &&
-                !command[i].equalsIgnoreCase("R2") &&
-                !command[i].equalsIgnoreCase("U") &&
-                !command[i].equalsIgnoreCase("U'") &&
-                !command[i].equalsIgnoreCase("U2") &&
-                !command[i].equalsIgnoreCase("B") &&
-                !command[i].equalsIgnoreCase("B'") &&
-                !command[i].equalsIgnoreCase("B2") &&
-                !command[i].equalsIgnoreCase("L") &&
-                !command[i].equalsIgnoreCase("L'") &&
-                !command[i].equalsIgnoreCase("L2") &&
-                !command[i].equalsIgnoreCase("D") &&
-                !command[i].equalsIgnoreCase("D'") &&
-                !command[i].equalsIgnoreCase("D2") &&
-                !command[i].equalsIgnoreCase("Q")
+            if (!command[i].equals("F") &&
+                !command[i].equals("F'") &&
+                !command[i].equals("F2") &&
+                !command[i].equals("R") &&
+                !command[i].equals("R'") &&
+                !command[i].equals("R2") &&
+                !command[i].equals("U") &&
+                !command[i].equals("U'") &&
+                !command[i].equals("U2") &&
+                !command[i].equals("B") &&
+                !command[i].equals("B'") &&
+                !command[i].equals("B2") &&
+                !command[i].equals("L") &&
+                !command[i].equals("L'") &&
+                !command[i].equals("L2") &&
+                !command[i].equals("D") &&
+                !command[i].equals("D'") &&
+                !command[i].equals("D2") &&
+                !command[i].equals("Q")
             ) {
                 System.out.println("잘못된 입력값이 포함되어 있습니다. 다시 입력해주세요!");
                 return userInput();
