@@ -59,8 +59,6 @@ public class LottoFrame extends Frame {
 
             }
         }
-
-
     }
 
     private void setButton() {
@@ -80,6 +78,5 @@ public class LottoFrame extends Frame {
         p.add(button);
         setBackground(Color.lightGray);
         add(p, "South");
-
     }
 }
