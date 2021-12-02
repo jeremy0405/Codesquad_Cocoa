@@ -40,22 +40,22 @@ public class Cube {
             int random = ran.nextInt(6);
             switch (random) {
                 case 0:
-                    turnCube("U");
+                    turnU();
                     break;
                 case 1:
-                    turnCube("L");
+                    turnD();
                     break;
                 case 2:
-                    turnCube("F");
+                    turnF();
                     break;
                 case 3:
-                    turnCube("R");
+                    turnB();
                     break;
                 case 4:
-                    turnCube("B");
+                    turnL();
                     break;
                 case 5:
-                    turnCube("D");
+                    turnR();
                     break;
             }
         }
