@@ -36,42 +36,13 @@ public class RubiksCubeFrame extends Frame {
 
     public void paint(Graphics g) {
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                checkColor(g, PlaneU, i, j);
-                g.fillRect(350 + 50 * j, 50 + 50 * i, 40, 40);
-            }
-        }
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                checkColor(g, PlaneL, i, j);
-                g.fillRect(200 + 50 * j, 200 + 50 * i, 40, 40);
-            }
-        }
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                checkColor(g, PlaneF, i, j);
-                g.fillRect(350 + 50 * j, 200 + 50 * i, 40, 40);
-            }
-        }
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                checkColor(g, PlaneR, i, j);
-                g.fillRect(500 + 50 * j, 200 + 50 * i, 40, 40);
-            }
-        }
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                checkColor(g, PlaneB, i, j);
-                g.fillRect(650 + 50 * j, 200 + 50 * i, 40, 40);
-            }
-        }
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                checkColor(g, PlaneD, i, j);
-                g.fillRect(350 + 50 * j, 350 + 50 * i, 40, 40);
-            }
-        }
+        paintCube(g, PlaneU,350, 50);
+        paintCube(g, PlaneL,200, 200);
+        paintCube(g, PlaneF,350, 200);
+        paintCube(g, PlaneR,500, 200);
+        paintCube(g, PlaneB,650, 200);
+        paintCube(g, PlaneD,350, 350);
+        
         g.setColor(Color.black);
         g.setFont(new Font("Serif", Font.ITALIC, 20));
         g.drawString("횟수 : " + count,40,80);
@@ -92,19 +63,28 @@ public class RubiksCubeFrame extends Frame {
 
     }
 
-    private void checkColor(Graphics g, String[][] PlaneU, int i, int j) {
-        if(PlaneU[i][j].equals("B")){
-            g.setColor(Color.BLUE);
-        } else if (PlaneU[i][j].equals("W")){
+    private void paintCube(Graphics g, String[][] p, int x, int y) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                checkColor(g, p, i, j);
+                g.fillRect(x + 50 * j, y + 50 * i, 40, 40);
+            }
+        }
+    }
+
+    private void checkColor(Graphics g, String[][] p, int i, int j) {
+        if(p[i][j].equals("B")){
             g.setColor(Color.WHITE);
-        } else if (PlaneU[i][j].equals("O")){
+        } else if (p[i][j].equals("W")){
             g.setColor(Color.ORANGE);
-        } else if (PlaneU[i][j].equals("G")){
+        } else if (p[i][j].equals("O")){
             g.setColor(Color.GREEN);
-        } else if (PlaneU[i][j].equals("Y")){
-            g.setColor(Color.YELLOW);
-        } else if (PlaneU[i][j].equals("R")){
+        } else if (p[i][j].equals("G")){
             g.setColor(Color.RED);
+        } else if (p[i][j].equals("Y")){
+            g.setColor(Color.BLUE);
+        } else if (p[i][j].equals("R")){
+            g.setColor(Color.YELLOW);
         }
     }
 

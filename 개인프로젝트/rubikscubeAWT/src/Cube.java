@@ -48,8 +48,8 @@ public class Cube {
     }
 
     private void init() {
-//        suffle();
-        turnCube("U");
+        suffle();
+        turnU();
     }
 
     private void suffle() {
@@ -59,22 +59,22 @@ public class Cube {
             int random = ran.nextInt(6);
             switch (random) {
                 case 0:
-                    turnCube("U");
+                    turnU();
                     break;
                 case 1:
-                    turnCube("L");
+                    turnL();
                     break;
                 case 2:
-                    turnCube("F");
+                    turnF();
                     break;
                 case 3:
-                    turnCube("R");
+                    turnR();
                     break;
                 case 4:
-                    turnCube("B");
+                    turnB();
                     break;
                 case 5:
-                    turnCube("D");
+                    turnD();
                     break;
             }
         }
@@ -164,154 +164,109 @@ public class Cube {
     }
 
     private void turnR() {
-        PlaneR = clockwiseTurn(PlaneR);
+        clockwiseTurn(PlaneR);
         turnAroundR();
     }
 
     private void turnL() {
-        PlaneL = clockwiseTurn(PlaneL);
+        clockwiseTurn(PlaneL);
         turnAroundL();
     }
 
     private void turnB() {
-        PlaneB = clockwiseTurn(PlaneB);
+        clockwiseTurn(PlaneB);
         turnAroundB();
     }
 
     private void turnF() {
-        PlaneF = clockwiseTurn(PlaneF);
+        clockwiseTurn(PlaneF);
         turnAroundF();
     }
 
     private void turnD() {
-        PlaneD = clockwiseTurn(PlaneD);
+        clockwiseTurn(PlaneD);
         turnAroundD();
     }
 
     private void turnU() {
-        PlaneU = clockwiseTurn(PlaneU);
+        clockwiseTurn(PlaneU);
         turnAroundU();
     }
 
-    public String[][] clockwiseTurn(String[][] plane) {
-        String[][] afterTurn = new String[3][3];
+    public void clockwiseTurn(String[][] plane) {
+        String[][] tmp = new String[3][3];
+        for (int i = 0; i < 3; i++) {
+            System.arraycopy(plane[i], 0, tmp[i], 0, 3);
+        }
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                afterTurn[j][2 - i] = plane[i][j];
+                plane[j][2 - i] = tmp[i][j];
             }
         }
-        return afterTurn;
+    }
+
+    private void repeatClockwiseTurn(int u, int d, int f, int b, int l, int r) {
+        for (int i = 0; i < u; i++) {
+            clockwiseTurn(PlaneU);
+        }
+        for (int i = 0; i < d; i++) {
+            clockwiseTurn(PlaneD);
+        }
+        for (int i = 0; i < f; i++) {
+            clockwiseTurn(PlaneF);
+        }
+        for (int i = 0; i < b; i++) {
+            clockwiseTurn(PlaneB);
+        }
+        for (int i = 0; i < l; i++) {
+            clockwiseTurn(PlaneL);
+        }
+        for (int i = 0; i < r; i++) {
+            clockwiseTurn(PlaneR);
+        }
+    }
+
+    private void turnAround(String[][] P1, String[][] P2, String[][] P3, String[][] P4) {
+        String[] tmp = new String[3];
+        System.arraycopy(P1[2], 0, tmp, 0, 3);
+        System.arraycopy(P2[2], 0, P1[2], 0, 3);
+        System.arraycopy(P3[2], 0, P2[2], 0, 3);
+        System.arraycopy(P4[2], 0, P3[2], 0, 3);
+        System.arraycopy(tmp, 0, P4[2], 0, 3);
     }
 
     private void turnAroundU() {
-        String[] tmp = new String[3];
-        System.arraycopy(PlaneL[0], 0, tmp, 0, 3);
-        System.arraycopy(PlaneF[0], 0, PlaneL[0], 0, 3);
-        System.arraycopy(PlaneR[0], 0, PlaneF[0], 0, 3);
-        System.arraycopy(PlaneB[0], 0, PlaneR[0], 0, 3);
-        System.arraycopy(tmp, 0, PlaneB[0], 0, 3);
+        repeatClockwiseTurn(0, 0, 2, 2, 2, 2);
+        turnAround(PlaneL, PlaneF, PlaneR, PlaneB);
+        repeatClockwiseTurn(0, 0, 2, 2, 2, 2);
     }
 
     private void turnAroundD() {
-        String[] tmp = new String[3];
-        System.arraycopy(PlaneB[2], 0, tmp, 0, 3);
-        System.arraycopy(PlaneR[2], 0, PlaneB[2], 0, 3);
-        System.arraycopy(PlaneF[2], 0, PlaneR[2], 0, 3);
-        System.arraycopy(PlaneL[2], 0, PlaneF[2], 0, 3);
-        System.arraycopy(tmp, 0, PlaneL[2], 0, 3);
+        turnAround(PlaneB, PlaneR, PlaneF, PlaneL);
     }
 
     private void turnAroundF() {
-        PlaneL = clockwiseTurn(PlaneL);
-        PlaneD = clockwiseTurn(PlaneD);
-        PlaneD = clockwiseTurn(PlaneD);
-        PlaneR = clockwiseTurn(PlaneR);
-        PlaneR = clockwiseTurn(PlaneR);
-        PlaneR = clockwiseTurn(PlaneR);
-        String[] tmp = new String[3];
-        System.arraycopy(PlaneR[2], 0, tmp, 0, 3);
-        System.arraycopy(PlaneU[2], 0, PlaneR[2], 0, 3);
-        System.arraycopy(PlaneL[2], 0, PlaneU[2], 0, 3);
-        System.arraycopy(PlaneD[2], 0, PlaneL[2], 0, 3);
-        System.arraycopy(tmp, 0, PlaneD[2], 0, 3);
-        PlaneL = clockwiseTurn(PlaneL);
-        PlaneL = clockwiseTurn(PlaneL);
-        PlaneL = clockwiseTurn(PlaneL);
-        PlaneD = clockwiseTurn(PlaneD);
-        PlaneD = clockwiseTurn(PlaneD);
-        PlaneR = clockwiseTurn(PlaneR);
+        repeatClockwiseTurn(0, 2, 0, 0, 1, 3);
+        turnAround(PlaneR, PlaneU, PlaneL, PlaneD);
+        repeatClockwiseTurn(0, 2, 0, 0, 3, 1);
     }
 
     private void turnAroundB() {
-        PlaneR = clockwiseTurn(PlaneR);
-        PlaneU = clockwiseTurn(PlaneU);
-        PlaneU = clockwiseTurn(PlaneU);
-        PlaneL = clockwiseTurn(PlaneL);
-        PlaneL = clockwiseTurn(PlaneL);
-        PlaneL = clockwiseTurn(PlaneL);
-        String[] tmp = new String[3];
-        System.arraycopy(PlaneD[2], 0, tmp, 0, 3);
-        System.arraycopy(PlaneL[2], 0, PlaneD[2], 0, 3);
-        System.arraycopy(PlaneU[2], 0, PlaneL[2], 0, 3);
-        System.arraycopy(PlaneR[2], 0, PlaneU[2], 0, 3);
-        System.arraycopy(tmp, 0, PlaneR[2], 0, 3);
-        PlaneL = clockwiseTurn(PlaneL);
-        PlaneU = clockwiseTurn(PlaneU);
-        PlaneU = clockwiseTurn(PlaneU);
-        PlaneR = clockwiseTurn(PlaneR);
-        PlaneR = clockwiseTurn(PlaneR);
-        PlaneR = clockwiseTurn(PlaneR);
+        repeatClockwiseTurn(2, 0, 0, 0, 3, 1);
+        turnAround(PlaneD, PlaneL, PlaneU, PlaneR);
+        repeatClockwiseTurn(2, 0, 0, 0, 1, 3);
     }
 
     private void turnAroundL() {
-        PlaneU = clockwiseTurn(PlaneU);
-        PlaneU = clockwiseTurn(PlaneU);
-        PlaneU = clockwiseTurn(PlaneU);
-        PlaneF = clockwiseTurn(PlaneF);
-        PlaneF = clockwiseTurn(PlaneF);
-        PlaneF = clockwiseTurn(PlaneF);
-        PlaneD = clockwiseTurn(PlaneD);
-        PlaneD = clockwiseTurn(PlaneD);
-        PlaneD = clockwiseTurn(PlaneD);
-        PlaneB = clockwiseTurn(PlaneB);
-        String[] tmp = new String[3];
-        System.arraycopy(PlaneU[2], 0, tmp, 0, 3);
-        System.arraycopy(PlaneB[2], 0, PlaneU[2], 0, 3);
-        System.arraycopy(PlaneD[2], 0, PlaneB[2], 0, 3);
-        System.arraycopy(PlaneF[2], 0, PlaneD[2], 0, 3);
-        System.arraycopy(tmp, 0, PlaneF[2], 0, 3);
-        PlaneU = clockwiseTurn(PlaneU);
-        PlaneF = clockwiseTurn(PlaneF);
-        PlaneD = clockwiseTurn(PlaneD);
-        PlaneB = clockwiseTurn(PlaneB);
-        PlaneB = clockwiseTurn(PlaneB);
-        PlaneB = clockwiseTurn(PlaneB);
+        repeatClockwiseTurn(3, 3, 3, 1, 0, 0);
+        turnAround(PlaneU, PlaneB, PlaneD, PlaneF);
+        repeatClockwiseTurn(1, 1, 1, 3, 0, 0);
     }
 
     private void turnAroundR() {
-        PlaneU = clockwiseTurn(PlaneU);
-        PlaneF = clockwiseTurn(PlaneF);
-        PlaneD = clockwiseTurn(PlaneD);
-        PlaneB = clockwiseTurn(PlaneB);
-        PlaneB = clockwiseTurn(PlaneB);
-        PlaneB = clockwiseTurn(PlaneB);
-        String[] tmp = new String[3];
-        System.arraycopy(PlaneU[2], 0, tmp, 0, 3);
-        System.arraycopy(PlaneF[2], 0, PlaneU[2], 0, 3);
-        System.arraycopy(PlaneD[2], 0, PlaneF[2], 0, 3);
-        System.arraycopy(PlaneB[2], 0, PlaneD[2], 0, 3);
-        System.arraycopy(tmp, 0, PlaneB[2], 0, 3);
-        PlaneU = clockwiseTurn(PlaneU);
-        PlaneU = clockwiseTurn(PlaneU);
-        PlaneU = clockwiseTurn(PlaneU);
-        PlaneF = clockwiseTurn(PlaneF);
-        PlaneF = clockwiseTurn(PlaneF);
-        PlaneF = clockwiseTurn(PlaneF);
-        PlaneD = clockwiseTurn(PlaneD);
-        PlaneD = clockwiseTurn(PlaneD);
-        PlaneD = clockwiseTurn(PlaneD);
-        PlaneB = clockwiseTurn(PlaneB);
+        repeatClockwiseTurn(1, 1, 1, 3, 0, 0);
+        turnAround(PlaneU, PlaneF, PlaneD, PlaneB);
+        repeatClockwiseTurn(3, 3, 3, 1, 0, 0);
     }
 
 }
-
