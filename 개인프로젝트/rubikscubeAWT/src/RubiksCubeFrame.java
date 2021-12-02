@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class RubiksCubeFrame extends Frame {
     private int count = 0;
@@ -19,15 +21,25 @@ public class RubiksCubeFrame extends Frame {
     private String[][] PlaneR = cube.getPlaneR();
     private String[][] PlaneB = cube.getPlaneB();
     private String[][] PlaneD = cube.getPlaneD();
-
+    Timer timer;
+    TimerTask task;
     public RubiksCubeFrame(String title) {
         super(title);
+        timer = new Timer();
+        task = new TimerTask() {
+            @Override
+            public void run() {
+                repaint();
+            }
+        };
+        timer.schedule(task,200,99);
         startTime = System.currentTimeMillis();
         setBounds(250, 100, 1000, 600);
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 dispose();
+                timer.cancel();
             }
         });
         setButton();
@@ -48,20 +60,37 @@ public class RubiksCubeFrame extends Frame {
         g.drawString("횟수 : " + count,40,80);
 
         double time = (System.currentTimeMillis() - startTime) / 1000.0;
-        g.drawString("경과 시간 : " + time, 40, 130);
+        String s = String.format("경과 시간 : %.1f sec", time);
+        g.drawString(s, 40, 130);
 
-        if(time > 2 && cube.checkAnswer()){
+
+        if(time > 1 && cube.checkAnswer()){
             g.fillRect(0,0,1000,800);
             g.setColor(Color.white);
-            g.drawString("정답입니다! 계속 하려면 아래 버튼을 아무거나 누르세요!", 200, 300);
+            g.drawString("정답입니다!", 200, 300);
             g.drawString("횟수 : " + count + "  경과 시간 : " + time,200,400);
+            //todo timer 를 잠깐 멈추던지
+            // timer를 죽이고 다시 키던지
+            task.cancel();
+            timer.cancel();
+            timer.purge();
             count = 0;
             startTime = System.currentTimeMillis();
-            Cube newcube = new Cube();
-            cube = newcube;
+            cube = new Cube();
         }
 
     }
+
+//    private void newTimer() {
+//        timer = new Timer();
+//        task = new TimerTask() {
+//            @Override
+//            public void run() {
+//                repaint();
+//            }
+//        };
+//        timer.schedule(task,200,100);
+//    }
 
     private void paintCube(Graphics g, String[][] p, int x, int y) {
         for (int i = 0; i < 3; i++) {
@@ -161,6 +190,23 @@ public class RubiksCubeFrame extends Frame {
 
         setBackground(Color.lightGray);
         add(p, "South");
+
+
+//        Panel restart = new Panel();
+//        Button buttonRestart = new Button("ReStart");
+//        buttonRestart.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                cube = new Cube();
+//                count = 0;
+//                startTime = System.currentTimeMillis();
+//                repaint();
+//            }
+//        });
+//        restart.add(buttonRestart);
+//        setBackground(Color.lightGray);
+//        add(restart, "East");
+
     }
 
     private void getPlane(Cube cube) {
